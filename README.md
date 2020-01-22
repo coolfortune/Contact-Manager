@@ -3,4 +3,4 @@ This is the source code for a web based Contact Manager. This project is the sma
 
 Use `npm start` to run the server.
 
-The server will run on `localhost` on port 5000.
+The server will run on `localhost` on port 3000.
