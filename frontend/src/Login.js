@@ -18,11 +18,7 @@ function Login(props)
             + loginPassword.value +'"}';
 
         try
-<<<<<<< HEAD
         {
-=======
-        {    
->>>>>>> 93811b6a7dd70f4d5ee98ae7c2cd026a88722138
             const response = await fetch('http://localhost:3000/api/login',
                 {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
