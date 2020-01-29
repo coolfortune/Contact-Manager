@@ -34,7 +34,7 @@ function Login(props)
                 localStorage.setItem('user_data', JSON.stringify(user));
 
                 setMessage('');
-                window.location.href = '/access';
+                window.location.href = '/contacts';
             }
         }
         catch(e)
