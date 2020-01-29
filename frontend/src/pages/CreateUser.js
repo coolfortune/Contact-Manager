@@ -1,10 +1,14 @@
 import React from 'react';
+import SignUp from '../components/SignUp';
 
 
 function CreateUser()
 {
     return(
-        <h1 id="title">Sign up below</h1>
+        <div>
+          <h1 id="title">Sign up below</h1>
+          <SignUp />
+        </div>
     );
 };
 
