@@ -18,5 +18,7 @@ router.post('/', (req,res) => {
         email: req.body.email
     });
 
-    newContact.save().then(contact => res.json(contact));
+    newContact.save().then(contact => res.json(Contact));
 })
+
+module.exports = router;

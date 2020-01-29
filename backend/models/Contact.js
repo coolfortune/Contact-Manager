@@ -18,6 +18,10 @@ const ContactSchema = new Schema({
     },
     email: {
         type: String,
+    }},
+    {
+        collection : 'Contacts'
     }
+);
 
-})
+module.exports = Contact = mongoose.model('contact', ContactSchema);
