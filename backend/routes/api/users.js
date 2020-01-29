@@ -10,7 +10,7 @@ const User = require('../../models/User');
 router.get('/', (req, res) => {
     User.find()
         .sort({ name: -1 })
-        .then(Users => res.json(users))
+        .then(Users => res.json(Users))
 })
 
 // router - POST api/users
@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
         password: req.body.password
     });
 
-    newUser.save().then(user => res.json(user));
+    newUser.save().then(user => res.json(User));
 })
 
 module.exports = router;
