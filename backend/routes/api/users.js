@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 // access - Public
 
 router.post('/', (req, res) => {
+        
     const newUser = new User({
         name: req.body.name,
         email: req.body.email,

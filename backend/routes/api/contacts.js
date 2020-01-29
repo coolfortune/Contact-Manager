@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         .then(Contacts => res.json(contacts))
 })
 
-router.post('/', (req,res) => {
+router.post('/add', (req,res) => {
     const newContact = new Contact ({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -19,6 +19,16 @@ router.post('/', (req,res) => {
     });
 
     newContact.save().then(contact => res.json(Contact));
+});
+
+
+// route - Delete api/contacts/:id
+// desc  - Delete a contact
+// access - Public (for now)
+router.delete('/:id', (req, res) => {
+    Contact.findById(req.params.id)
+        .then(user => user.remove().then(() => res.json({ success: true})))
+        .catch(err => res.status(404).json({ success: false}))
 })
 
 module.exports = router;
