@@ -7,6 +7,7 @@ const User = require('../../models/User');
 // router - GET api/users
 // descr - GET all users
 // access - Public
+
 router.get('/', (req, res) => {
     User.find()
         .sort({ name: -1 })
@@ -18,10 +19,21 @@ router.get('/', (req, res) => {
 // access - Public
 
 router.post('/', (req, res) => {
+    const existingUser = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+
+    existingUser.save().then(user => res.json(User));
+})
+
+// router - POST api/users
+// descr - Create a User
+// access - Public
+
+router.post('/register', (req, res) => {
     const newUser = new User({
-        name: req.body.name,
-        email: req.body.email,
-        userID: req.body.userID,
+        username: req.body.username,
         password: req.body.password
     });
 

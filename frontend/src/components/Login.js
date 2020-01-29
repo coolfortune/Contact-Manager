@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import CreateUser from '../pages/CreateUser';
 
+const md5 = require('md5');
+
 function Login(props)
 {
 
@@ -13,14 +15,17 @@ function Login(props)
     {
         event.preventDefault();
 
-        var js = '{"login":"'
+        const hashedPass = md5(loginPassword.value);
+
+        var js = '{"username":"'
             + loginName.value
             + '","password":"'
-            + loginPassword.value +'"}';
+            + hashedPass
+            +'"}';
 
         try
         {
-            const response = await fetch('http://localhost:3000/api/login',
+            const response = await fetch('http://localhost:3000/api/users',
                 {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
             var res = JSON.parse(await response.text());
@@ -58,7 +63,7 @@ function Login(props)
 	        <input type="text" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
 	        <input type="password" id="loginPassword" placeholder="Password" ref={(c) => loginPassword = c} /><br />
             <input type="submit" id="loginButton" class="buttons" value = "Do It" onClick={doLogin} />
-    <input type="submit" id="loginButton" class="buttons" value = "Create User" onClick={createUser} />
+            <input type="submit" id="loginButton" class="buttons" value = "Create User" onClick={createUser} />
             </form>
 	        <span id="loginResult">{message}</span>
         </div>
