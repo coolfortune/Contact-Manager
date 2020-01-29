@@ -1,6 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+
 import './App.css';
 import LoginPage from './pages/LoginPage'
+import CreateUser from './pages/CreateUser'
+//import ContactsPage from './pages/ContactsPage'
 
 function App() {
   return (
@@ -10,10 +14,7 @@ function App() {
           <LoginPage />
         </Route>
         <Route path="/register" exact>
-          <AccessColorsPage />
-        </Route>
-        <Route path="/contacts" exact>
-          <ContactsPage />
+          <CreateUser />
         </Route>
         <Redirect to="/" />
       </Switch>  
