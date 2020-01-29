@@ -1,7 +1,7 @@
 import React from 'react';
 
-import PageTitle from './PageTitle';
-import Login from './Login';
+import PageTitle from '../components/PageTitle';
+import Login from '../components/Login';
 
 const LoginPage = (props) =>
 {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CreateUser from './CreateUser';
+import CreateUser from '../pages/CreateUser';
 
 function Login(props)
 {
@@ -35,7 +35,7 @@ function Login(props)
                 localStorage.setItem('user_data', JSON.stringify(user));
 
                 setMessage('');
-                window.location.href = '/access';
+                window.location.href = '/contacts';
             }
         }
         catch(e)
