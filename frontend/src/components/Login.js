@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CreateUser from '../pages/CreateUser';
+//import CreateUser from '../pages/CreateUser';
 
 function Login(props)
 {
@@ -54,10 +54,9 @@ function Login(props)
     return(
         <div id="loginDiv">
             <form onSubmit={doLogin}>
-	        <span id="inner-title">PLEASE LOG IN</span><br />
 	        <input type="text" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
 	        <input type="password" id="loginPassword" placeholder="Password" ref={(c) => loginPassword = c} /><br />
-            <input type="submit" id="loginButton" class="buttons" value = "Do It" onClick={doLogin} />
+            <input type="submit" id="loginButton" class="buttons" value = "Log in" onClick={doLogin} />
     <input type="submit" id="loginButton" class="buttons" value = "Create User" onClick={createUser} />
             </form>
 	        <span id="loginResult">{message}</span>

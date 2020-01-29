@@ -4,7 +4,9 @@ import React from 'react';
 function PageTitle()
 {
     return(
-        <h1 id="title">Contacto</h1>
+        <font color="yellow">
+        <h1 id="title">Mamba Contacts</h1>
+        </font>
     );
 };
 
