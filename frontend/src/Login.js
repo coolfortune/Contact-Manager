@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CreateUser from './CreateUser';
 
 function Login(props)
 {
@@ -45,6 +46,11 @@ function Login(props)
 
     };
 
+    const createUser = async event =>
+    {
+        window.location.href = '/register';
+    }
+
     return(
         <div id="loginDiv">
             <form onSubmit={doLogin}>
@@ -52,7 +58,7 @@ function Login(props)
 	        <input type="text" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
 	        <input type="password" id="loginPassword" placeholder="Password" ref={(c) => loginPassword = c} /><br />
             <input type="submit" id="loginButton" class="buttons" value = "Do It" onClick={doLogin} />
-            <input type="submit" id="loginButton" class="buttons" value = "Create new user" onClick={doLogin} />
+    <input type="submit" id="loginButton" class="buttons" value = "Create User" onClick={createUser} />
             </form>
 	        <span id="loginResult">{message}</span>
         </div>
