@@ -52,6 +52,7 @@ function Login(props)
 	        <input type="text" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
 	        <input type="password" id="loginPassword" placeholder="Password" ref={(c) => loginPassword = c} /><br />
             <input type="submit" id="loginButton" class="buttons" value = "Do It" onClick={doLogin} />
+            <input type="submit" id="loginButton" class="buttons" value = "Create new user" onClick={doLogin} />
             </form>
 	        <span id="loginResult">{message}</span>
         </div>
