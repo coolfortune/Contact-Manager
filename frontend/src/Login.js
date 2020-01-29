@@ -8,7 +8,7 @@ function Login(props)
 
     const [message,setMessage] = useState('');
 
-    const doLogin = async event => 
+    const doLogin = async event =>
     {
         event.preventDefault();
 
@@ -18,8 +18,8 @@ function Login(props)
             + loginPassword.value +'"}';
 
         try
-        {    
-            const response = await fetch('http://localhost:5000/api/login',
+        {
+            const response = await fetch('http://localhost:3000/api/login',
                 {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
             var res = JSON.parse(await response.text());
@@ -41,8 +41,8 @@ function Login(props)
         {
             alert(e.toString());
             return;
-        }    
-        
+        }
+
     };
 
     return(
