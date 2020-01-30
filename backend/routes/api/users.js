@@ -19,9 +19,6 @@ router.get('/', (req, res) => {
 // access - Public
 
 router.post('/', (req, res) => {
-<<<<<<< HEAD
-        
-=======
     const existingUser = new User({
         username: req.body.username,
         password: req.body.password
@@ -35,7 +32,6 @@ router.post('/', (req, res) => {
 // access - Public
 
 router.post('/register', (req, res) => {
->>>>>>> 74ee995a9a9dac7b1a6cd0cccd1ffa4c56dbb888
     const newUser = new User({
         username: req.body.username,
         password: req.body.password

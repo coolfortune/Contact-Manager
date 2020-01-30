@@ -21,6 +21,11 @@ router.post('/add', (req,res) => {
     newContact.save().then(contact => res.json(Contact));
 });
 
+// Work in Progress
+router.patch('/:id', (req, res) => {
+    Contact.findByIdAndUpdate(req.params.id)
+});
+
 
 // route - Delete api/contacts/:id
 // desc  - Delete a contact
