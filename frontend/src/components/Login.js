@@ -17,8 +17,14 @@ function Login(props)
 
         const hashedPass = md5(loginPassword.value);
 
+<<<<<<< HEAD
         var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
 
+=======
+        // Change 'user' to 'username'
+        var js = JSON.stringify({user:loginName.value, password:loginPassword.value});
+            
+>>>>>>> 965d5ae75bf484c73e0a50b6a6aae56ce125e3a7
         try
         {
             if(!loginName.value || !loginPassword.value)
@@ -31,6 +37,7 @@ function Login(props)
                 {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
 
             var res = JSON.parse(await response.text());
+            alert(res);
 
             if(!res)
             {

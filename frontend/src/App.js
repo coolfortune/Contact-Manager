@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 
 import './App.css';
 import LoginPage from './pages/LoginPage'
-import CreateUser from './pages/CreateUser'
-import ContactsPage from './pages/ContactsPage'
+import RegisterPage from './pages/RegisterPage'
 //import ContactsPage from './pages/ContactsPage'
 
 function App() {
@@ -15,7 +14,7 @@ function App() {
           <LoginPage />
         </Route>
         <Route path="/register" exact>
-          <CreateUser />
+          <RegisterPage />
         </Route>
         <Route path="/contacts" exact>
           <ContactsPage />
