@@ -24,7 +24,7 @@ function Login(props)
 
         // Change 'user' to 'username'
         var js = JSON.stringify({user:loginName.value, password:loginPassword.value});
-            
+
         try
         {
             const response = await fetch('http://localhost:5000/api/users',
