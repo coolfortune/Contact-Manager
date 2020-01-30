@@ -18,7 +18,7 @@ function Login(props)
         const hashedPass = md5(loginPassword.value);
 
         var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
-            
+
         try
         {
             if(!loginName.value || !loginPassword.value)

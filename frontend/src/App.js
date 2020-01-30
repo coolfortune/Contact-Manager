@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import './App.css';
 import LoginPage from './pages/LoginPage'
 import CreateUser from './pages/CreateUser'
+import ContactsPage from './pages/ContactsPage'
 //import ContactsPage from './pages/ContactsPage'
 
 function App() {
@@ -16,8 +17,11 @@ function App() {
         <Route path="/register" exact>
           <CreateUser />
         </Route>
+        <Route path="/contacts" exact>
+          <ContactsPage />
+        </Route>
         <Redirect to="/" />
-      </Switch>  
+      </Switch>
     </Router>
   );
 }
