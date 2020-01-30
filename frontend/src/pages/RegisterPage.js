@@ -3,7 +3,7 @@ import SignUp from '../components/SignUp';
 import RegisterTitle from '../components/RegisterTitle';
 
 
-function CreateUser()
+function RegisterPage()
 {
     return(
         <div class="container-fluid">
@@ -13,4 +13,4 @@ function CreateUser()
     );
 };
 
-export default CreateUser;
+export default RegisterPage;

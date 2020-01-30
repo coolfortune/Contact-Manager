@@ -10,7 +10,8 @@ function SignUp()
 
 
     var registerName;
-    var registerPassword;
+	var registerPassword;
+	var verifyPassword;
 
 
 
@@ -22,6 +23,8 @@ function SignUp()
 	        <input type="text" id="registerName" placeholder="Username" ref={(c) => registerName = c} /><br />
             <label for="registerPassword" class="text text-primary">Enter Password: </label>
 	        <input type="password" id="registerPassword" placeholder="Password" ref={(c) => registerPassword = c} /><br />
+            <label for="verifyPassword" class="text text-primary">Verify Password: </label>
+	        <input type="password" id="verifyPassword" placeholder="Password" ref={(c) => verifyPassword = c} /><br />
             <input type="submit" id="registerButton" class="btn btn-primary m-1" value="Register" />
             <a role="button" class="btn btn-warning m-1" href="/" >Go Back</a>
 		</form>

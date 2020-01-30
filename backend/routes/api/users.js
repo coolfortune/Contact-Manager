@@ -15,11 +15,12 @@ router.get('/', (req, res) => {
 })
 
 // router - POST api/users
-// descr -  a User
+// descr -  Reads an exisiting user
 // access - Public
 
 router.post('/', (req, res) => {
     const credentials = req.body;
+    console.log(credentials)
 
     User.findOne(credentials)
         .then(user => res.json(user))
