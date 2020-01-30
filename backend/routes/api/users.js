@@ -15,16 +15,15 @@ router.get('/', (req, res) => {
 })
 
 // router - POST api/users
-// descr - Create a User
+// descr -  a User
 // access - Public
 
 router.post('/', (req, res) => {
-    const existingUser = new User({
-        username: req.body.username,
-        password: req.body.password
-    });
+    const credentials = req.body;
 
-    existingUser.save().then(user => res.json(User));
+    User.findOne(credentials)
+        .then(user => res.json(user))
+        .catch(err => console.log(err))
 })
 
 // router - POST api/users

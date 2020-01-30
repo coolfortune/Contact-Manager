@@ -9,7 +9,7 @@ router.post('/', async(req, res) => {
 
     var error = "";
 
-    const { login, password} = req.body;
+    const { login, password } = req.body;
     var id = -1;
     var fn = "";
     var ln = "";

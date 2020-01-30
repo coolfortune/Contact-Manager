@@ -1,14 +1,13 @@
 import React from 'react';
 import SignUp from '../components/SignUp';
+import RegisterTitle from '../components/RegisterTitle';
 
 
 function CreateUser()
 {
     return(
-        <div>
-            <font color="yellow">
-                <h1 id="title">Sign up below</h1>
-            </font>
+        <div class="container-fluid">
+            <RegisterTitle />
             <SignUp />
         </div>
     );

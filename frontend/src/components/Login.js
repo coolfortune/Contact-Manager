@@ -14,22 +14,25 @@ function Login(props)
     {
         event.preventDefault();
 
+
         const hashedPass = md5(loginPassword.value);
 
-        var js = '{"username":"'
-            + loginName.value
-            + '","password":"'
-            + hashedPass
-            +'"}';
-
+        var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
+            
         try
         {
+            if(!loginName.value || !loginPassword.value)
+            {
+                setMessage('Please use all required fields');
+                return;
+            }
+
             const response = await fetch('http://localhost:5000/api/users',
-                {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+                {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
 
             var res = JSON.parse(await response.text());
 
-            if( res.id <= 0 )
+            if(!res)
             {
                 setMessage('User/Password combination incorrect');
             }
@@ -57,13 +60,15 @@ function Login(props)
 
     return(
         <div id="loginDiv">
-            <form onSubmit={doLogin}>
+            <form>
+            <label for="loginName" class="text text-primary">Enter Username: </label>
 	        <input type="text" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
+            <label for="loginPassword" class="text text-primary">Enter Password: </label>
 	        <input type="password" id="loginPassword" placeholder="Password" ref={(c) => loginPassword = c} /><br />
-            <input type="submit" id="loginButton" class="buttons" value = "Log in" onClick={doLogin} />
-            <input type="submit" id="registerButton" class="buttons" value = "Create User" onClick={createUser} />
+            <button type="button" id="registerButton" class="btn btn-outline-primary m-1"  onClick={createUser} >Create User</button>
+            <input type="submit" id="loginButton"  class="btn btn-primary m-1" value="Log In" onClick={doLogin} />
             </form>
-	        <span id="loginResult">{message}</span>
+	        <span id="loginResult" class="text text-warning">{message}</span>
         </div>
     );
 };
