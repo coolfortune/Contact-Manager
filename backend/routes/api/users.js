@@ -20,7 +20,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const credentials = req.body;
-    console.log(credentials)
 
     User.findOne(credentials)
         .then(user => res.json(user))

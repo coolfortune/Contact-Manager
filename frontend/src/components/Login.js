@@ -14,6 +14,11 @@ function Login(props)
     {
         event.preventDefault();
 
+        if(!loginName.value || !loginPassword.value)
+        {
+            setMessage('Please use all required fields');
+            return;
+        }
 
         const hashedPass = md5(loginPassword.value);
 
@@ -22,17 +27,10 @@ function Login(props)
             
         try
         {
-            if(!loginName.value || !loginPassword.value)
-            {
-                setMessage('Please use all required fields');
-                return;
-            }
-
             const response = await fetch('http://localhost:5000/api/users',
                 {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
 
             var res = JSON.parse(await response.text());
-            alert(res);
 
             if(!res)
             {
