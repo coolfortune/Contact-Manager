@@ -19,15 +19,14 @@ router.get('/', (req, res) => {
 // access - Public
 
 router.post('/', (req, res) => {
-    const credentials = req.body;
 
-    User.findOne(credentials)
+    User.find(req.body)
         .then(user => res.json(user))
         .catch(err => console.log(err))
-})
+});
 
-// router - POST api/users
-// descr - Create a User
+// router - POST api/users/register
+// descr - Creates a new User
 // access - Public
 
 router.post('/register', (req, res) => {
@@ -36,7 +35,11 @@ router.post('/register', (req, res) => {
         password: req.body.password
     });
 
-    newUser.save().then(user => res.json(User));
-})
+    //console.log(newUser.toString());
+
+    newUser.save()
+           .then(user => res.json(user))
+           .catch(err => console.log(err))
+});
 
 module.exports = router;

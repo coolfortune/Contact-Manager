@@ -23,16 +23,16 @@ function Login(props)
         const hashedPass = md5(loginPassword.value);
 
         // Change 'user' to 'username'
-        var js = JSON.stringify({user:loginName.value, password:loginPassword.value});
+        var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
 
         try
         {
             const response = await fetch('http://localhost:5000/api/users',
                 {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
 
-            var res = JSON.parse(await response.text());
+            var res = await response.text();
 
-            if(!res)
+            if(res === "[]")
             {
                 setMessage('User/Password combination incorrect');
             }

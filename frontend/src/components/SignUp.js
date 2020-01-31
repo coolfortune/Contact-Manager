@@ -29,8 +29,30 @@ function SignUp()
 			return;
 		}
 
+		var jsUser = JSON.stringify({username:registerName.value});
+		var js = JSON.stringify({username:registerName.value, password:registerPassword.value});
+		
 		try 
 		{
+            const fstResponse = await fetch('http://localhost:5000/api/users',
+                {method:'POST', body:jsUser, headers:{'Content-Type': 'application/json'}});
+
+			var res = await fstResponse.text();
+
+			if(!(res === "[]"))
+			{
+				console.log(res.toString());
+				setMessage('This account already exists, please login');
+				return;
+			}
+
+            const sndResponse = await fetch('http://localhost:5000/api/users/register',
+                {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
+
+			var result = JSON.parse(await sndResponse.text());
+			console.log(result);
+			
+			setMessage('Account successfully created');
 			return;
 		}
 		catch(e)
