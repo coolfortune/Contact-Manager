@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
 
 // User Model
 const User = require('../../models/User');
@@ -8,11 +9,13 @@ const User = require('../../models/User');
 // descr - GET all users
 // access - Public
 
-router.get('/', (req, res) => {
+// Don't need a get request of a sorted list of users
+
+/*router.get('/', (req, res) => {
     User.find()
         .sort({ name: -1 })
         .then(Users => res.json(Users))
-})
+})*/
 
 // router - POST api/users
 // descr -  Reads an exisiting user
@@ -35,11 +38,26 @@ router.post('/register', (req, res) => {
         password: req.body.password
     });
 
-    //console.log(newUser.toString());
+    // Add salt and hash
+    bcrypt.genSalt(5, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if(err) throw err;
+            newUser.password = hash;
+            newUser.save()
+                .then(user => {
+                    res.json({
+                        user: {
+                            username: user.username,
+                            password: user.password
+                        }
+                    });
+                });
+        });
+    });
 
-    newUser.save()
-           .then(user => res.json(user))
-           .catch(err => console.log(err))
+    //newUser.save()
+    //       .then(user => res.json(user))
+    //       .catch(err => console.log(err))
 });
 
 module.exports = router;
