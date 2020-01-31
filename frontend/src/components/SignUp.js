@@ -66,13 +66,13 @@ function SignUp()
 	<div id="registerDiv">
 		<form >
             <label for="registerName" class="text text-primary">Enter Username: </label>
-	        <input type="text" id="registerName" placeholder="Username" ref={(c) => registerName = c} /><br />
+	        <input type="text" class="form-control" id="registerName" placeholder="Username" ref={(c) => registerName = c} /><br />
             <label for="registerPassword" class="text text-primary">Enter Password: </label>
-	        <input type="password" id="registerPassword" placeholder="Password" ref={(c) => registerPassword = c} /><br />
+	        <input type="password" class="form-control" id="registerPassword" placeholder="Password" ref={(c) => registerPassword = c} /><br />
             <label for="verifyPassword" class="text text-primary">Verify Password: </label>
-	        <input type="password" id="verifyPassword" placeholder="Password" ref={(c) => verifyPassword = c} /><br />
-            <input type="submit" id="registerButton" class="btn btn-primary m-1" value="Register" onClick={doRegister} />
-            <a role="button" class="btn btn-warning m-1" href="/" >Go Back</a>
+	        <input type="password" class="form-control" id="verifyPassword" placeholder="Password" ref={(c) => verifyPassword = c} /><br />
+            <a role="button" class="btn btn-outline-warning" href="/" >Go Back</a>
+            <input type="submit" id="registerButton" class="btn btn-primary m-2" value="Register" onClick={doRegister} />
 		</form>
 	        <span id="registerResult" class="text text-warning">{message}</span>
 	</div>

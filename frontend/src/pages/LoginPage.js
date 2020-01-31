@@ -7,7 +7,7 @@ const LoginPage = (props) =>
 {
 
     return(
-        <div class="container-fluid">
+        <div class="div-center">
             <PageTitle />
             <Login />
         </div>

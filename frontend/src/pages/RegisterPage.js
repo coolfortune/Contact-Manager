@@ -6,7 +6,7 @@ import RegisterTitle from '../components/RegisterTitle';
 function RegisterPage()
 {
     return(
-        <div class="container-fluid">
+        <div class="div-center">
             <RegisterTitle />
             <SignUp />
         </div>
