@@ -8,7 +8,7 @@ const LoginPage = (props) =>
 
     return(
         <div class="div-center">
-            <PageTitle />
+            <PageTitle /> 
             <Login />
         </div>
     );

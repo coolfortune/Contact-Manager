@@ -1,5 +1,12 @@
 body {
+  background-image: url(./img/kobe.jpg);
+  background-size: cover;
+  background-blend-mode: soft-light;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
   margin: 0;
+  font-size: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +18,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h2{
+  font-size: 4vw;
+  text-align: center;
+  white-space: nowrap;
+  position: fixed;
+  top: 7vw;
+  right: 56vw;
+  width: 0vw;
+  height: 0vw;
+  padding: 0vw 2vw 0vw 0vw;
+}
+
+h1{
+  font-size: 5vw;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 5px 5px 10px purple;
+  position: fixed;
+  top: 1vw;
+  right: 66vw;
+  width: 0vw;
+  height: 0vw;
+  padding: 0vw 2vw 0vw 0vw;
+}
+
+form{
+  position: absolute;
+  margin-top: 25vw;
+  margin-left: 3vw;
+  white-space: nowrap;
+  width: fit-content;
+  line-height: .5em;
+}
+
+.buttons{
+  text-align: start;
+}
+
+.badLogin1{
+  position: fixed;
+  top: 38vw;
+  left: 42vw;
+}
+
+.badLogin2{
+  position: fixed;
+  top: 42vw;
+  left: 42vw;
+}
+
