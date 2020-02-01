@@ -58,17 +58,20 @@ function Login(props)
         window.location.href = '/register';
     }
 
-    return(
+    return(        
         <div id="loginDiv" class="form-group">
+
             <form>
                 <label for="loginName" class="text text-primary">Enter Username: </label>
                 <input type="text" class="form-control" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
                 <label for="loginPassword" class="text text-primary">Enter Password: </label>
                 <input type="password" class="form-control" id="loginPassword" placeholder="Password" ref={(c) => loginPassword = c} /><br />
-                <button type="button" id="registerButton" class="btn btn-outline-primary"  onClick={createUser} >Create User</button>
-                <input type="submit" id="loginButton"  class="btn btn-primary m-2" value="Log In" onClick={doLogin} />
+                <div class="buttons">
+                    <button type="button" id="registerButton" class="btn btn-outline-primary"  onClick={createUser} >Create User</button>
+                    <input type="submit" id="loginButton"  class="btn btn-primary m-2" value="Log In" onClick={doLogin} />
+                </div>
             </form>
-	        <span id="loginResult" class="text text-warning">{message}</span>
+	        <span id="loginResult" class="badLogin1 text text-warning">{message}</span>
         </div>
     );
 };

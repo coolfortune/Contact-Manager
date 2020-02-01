@@ -7,7 +7,7 @@ const RegisterTitle = (props) =>
 
     return(
             <font color="yellow">
-                <h1 id="title">Sign up below</h1>
+                <h2 id="title">Sign Up</h2>
             </font>
     );
 };

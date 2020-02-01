@@ -74,7 +74,7 @@ function SignUp()
             <a role="button" class="btn btn-outline-warning" href="/" >Go Back</a>
             <input type="submit" id="registerButton" class="btn btn-primary m-2" value="Register" onClick={doRegister} />
 		</form>
-	        <span id="registerResult" class="text text-warning">{message}</span>
+	        <span id="registerResult" class="text text-warning badLogin2">{message}</span>
 	</div>
 	);
 }

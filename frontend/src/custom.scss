@@ -1,5 +1,6 @@
 $body-bg: rgb(64, 1, 80);
 
+
 $theme-colors: (
   "primary": yellow,
   "warning": rgb(253, 184, 39),
@@ -7,3 +8,5 @@ $theme-colors: (
 );
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+
