@@ -23,7 +23,7 @@ function SignUp()
             setMessage('Please use all required fields');
             return;
 		}
-		else if(!(registerPassword.value === verifyPassword.value))
+		else if(registerPassword.value !== verifyPassword.value)
 		{
 			setMessage('Passwords do not match');
 			return;
