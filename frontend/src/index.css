@@ -1,12 +1,5 @@
-body {
-  background-image: url(./img/kobe.jpg);
-  background-size: cover;
-  background-blend-mode: soft-light;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  position: relative;
-  margin: 0;
-  font-size: 100%;
+/*body {
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -47,7 +40,7 @@ h1{
 form{
   position: absolute;
   margin-top: 25vw;
-  margin-left: 3vw;
+  margin-left: 42vw;
   white-space: nowrap;
   width: fit-content;
   line-height: .5em;
@@ -67,5 +60,4 @@ form{
   position: fixed;
   top: 42vw;
   left: 42vw;
-}
-
+}*/
