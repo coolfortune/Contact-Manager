@@ -1,16 +1,17 @@
 import React from 'react';
 import ContactsTitle from '../components/ContactsTitle';
-
-
+//import Navbar from '../components/Navbar';
+import Table from '../components/Table';
+import '../styles.css';
 
 function ContactsPage()
 {
-	
 	return(
-		<div class="container-fluid" >
+		<div className="ContactsPage" >
+			
 			<ContactsTitle />
+			<Table />
 		</div>
-
 	);
 };
 

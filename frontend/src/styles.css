@@ -56,3 +56,52 @@ form{
     top: 43vw;
     left: 42vw;
 }
+
+.ContactsPage{
+    background-image: url(./img/kobe3.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    font-size: 100%;
+    margin: 0px 0px 0px 0px;
+    min-height: 100vh;
+}
+
+.navbar{
+    width: 100%;
+    background-color: lightsteelblue;
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    min-height: 100vh;
+    margin: 8vw 0vw 0vw 20vw;
+  }
+  
+  th{
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: purple;
+    color: yellow;
+  }
+  td{
+      text-align: left;
+      padding: 8px;
+      border: 1px solid #ddd;
+      background-color: yellow;
+  }
+  
+  .T1{
+      overflow-x: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      min-height: 100vh;
+      color: purple;
+  }
