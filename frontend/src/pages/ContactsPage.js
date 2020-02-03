@@ -1,7 +1,8 @@
 import React from 'react';
 import ContactsTitle from '../components/ContactsTitle';
 //import Navbar from '../components/Navbar';
-import Table from '../components/Table';
+//import Table from '../components/Table';
+import ContactUI from '../components/ContactUI';
 import '../styles.css';
 
 function ContactsPage()
@@ -10,7 +11,8 @@ function ContactsPage()
 		<div className="ContactsPage" >
 			
 			<ContactsTitle />
-			<Table />
+			<ContactUI />
+			
 		</div>
 	);
 };

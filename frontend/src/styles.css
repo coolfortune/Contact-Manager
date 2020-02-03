@@ -105,3 +105,52 @@ table {
       min-height: 100vh;
       color: purple;
   }
+
+  .UIbuttons{
+      color: yellow;
+      background-color: purple;
+      width: 200px;
+  }
+
+  #searchContactButton{
+      position: fixed;
+      top: 30vh;
+      right: 80vh;
+      font-size: x-large;
+  }
+
+  #addContactButton{
+    position: fixed;
+    top: 30vh;
+    right: 40vh;
+    font-size: x-large;
+}
+
+  #searchText, #ContactText{
+      background-color: yellow;
+      color: purple;
+      font-size: medium;
+      width: 200px;
+  }
+
+  #searchText{
+      position: fixed;
+      top: 35vh;
+      right: 80vh;
+      text-align: center;
+  }
+
+  #ContactText{
+    position: fixed;
+    top: 35vh;
+    right: 40vh;
+    text-align: center;
+}
+
+#dunkGif{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 60vh;
+    width: 70vh;
+}
