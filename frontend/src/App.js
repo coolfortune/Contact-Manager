@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 
 import './App.css';
 import './styles.css';
-import LoginPage from './pages/LoginPage'
-import RegisterPage from './pages/RegisterPage'
-import ContactsPage from './pages/ContactsPage'
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import ContactsPage from './pages/ContactsPage';
+import WelcomePage from './pages/WelcomePage';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/register" exact>
           <RegisterPage />
+        </Route>
+        <Route path="/welcome" exact>
+          <WelcomePage />
         </Route>
         <Route path="/contacts" exact>
           <ContactsPage />
