@@ -9,7 +9,6 @@ function ContactUI()
     const [searchResults,setResults] = useState('');
     const [contactList,setContactList] = useState('');
 
-
     const addContact = async event => 
     {
 	    event.preventDefault();
@@ -37,7 +36,7 @@ function ContactUI()
             <input type="text" id="ContactText" placeholder="First, Last, (xxx) xxx-xxxx" ref={(c) => contact = c} />
             <button type="button" id="addContactButton" class="UIbuttons" onClick={addContact}> Add Contact </button><br />
             <span id="ContactAddResult">{message}</span>
-            <img id="dunkGif" src='https://media.giphy.com/media/pkfmPUCExTmAo/giphy.gif'></img>
+            <img id="dunkGif" alt='' src='https://media.giphy.com/media/pkfmPUCExTmAo/giphy.gif'></img>
 
         </div>
     );

@@ -4,9 +4,7 @@
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
     font-size: 100%;
-    margin: 0px 0px 0px 0px;
     min-height: 100vh;
 }
 
