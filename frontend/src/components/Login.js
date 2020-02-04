@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-const md5 = require('md5');
-
 function Login(props)
 {
 
@@ -19,8 +17,6 @@ function Login(props)
             setMessage('Please use all required fields');
             return;
         }
-
-        const hashedPass = md5(loginPassword.value);
 
         // Change 'user' to 'username'
         var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
