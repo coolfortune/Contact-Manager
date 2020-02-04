@@ -18,10 +18,7 @@ function App() {
         <Route path="/register" exact>
           <RegisterPage />
         </Route>
-        <Route path="/welcome" exact>
-          <WelcomePage />
-        </Route>
-        <Route path="/contacts" exact>
+        <Route path="/contacts/:id" exact>
           <ContactsPage />
         </Route>
         <Redirect to="/" />
