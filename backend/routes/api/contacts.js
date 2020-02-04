@@ -3,19 +3,19 @@ const router = express.Router();
 
 const Contact = require('../../models/Contact');
 
-router.get('/', (req, res) => {
-    Contact.find()
+router.post('/', (req, res) => {
+Contact.find(req.body)
         .sort({ firstName: -1 })
         .then(Contacts => res.json(contacts))
 })
-
 router.post('/add', (req,res) => {
     const newContact = new Contact ({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         phoneNumber: req.body.phoneNumber,
         address: req.body.address,
-        email: req.body.email
+        email: req.body.email,
+        userId: req.body.userId 
     });
 
     newContact.save().then(contact => res.json(Contact));
