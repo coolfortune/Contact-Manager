@@ -22,7 +22,6 @@ const User = require('../../models/User');
 // access - Public
 
 router.post('/', (req, res) => {
-
     User.find(req.body)
         .then(user => res.json(user))
         .catch(err => console.log(err))
@@ -58,6 +57,28 @@ router.post('/register', (req, res) => {
     //newUser.save()
     //       .then(user => res.json(user))
     //       .catch(err => console.log(err))
+});
+
+// Work in Progress:
+// Returning UnhandledPromiseRejectionWarning
+router.post('/login', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    User.findOne({ username }).then(user => {
+        if(!user) {
+            return res.status(404).json({ usernameNotFound: "Username not found"});
+        }
+        else {
+            bcrypt.compare(password, user.password, function(err, match){
+                
+                if (match)
+                    return res.json({ success : true })
+                else
+                    return res.json({ incorrectPassword: true})
+        });
+    }});
+    
 });
 
 module.exports = router;
