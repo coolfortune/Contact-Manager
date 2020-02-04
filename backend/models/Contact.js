@@ -7,18 +7,22 @@ const ContactSchema = new Schema({
         required: true
     },
     lastName: {
-        type: String,
+        type: String
     },
     phoneNumber: {
         type: Number,
         required: true
     },
     address: {
-        type: String,
+        type: String
     },
     email: {
-        type: String,
-    }},
+        type: String
+    },
+    userId: {
+        type: Number,
+        required: true
+    }}, 
     {
         collection : 'Contacts'
     }

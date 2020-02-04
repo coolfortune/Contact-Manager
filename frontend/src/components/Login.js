@@ -28,7 +28,7 @@ function Login(props)
 
             var res = await response.text();
 
-            if(res === "[]")
+            if(res === "")
             {
                 setMessage('User/Password combination incorrect');
             }
