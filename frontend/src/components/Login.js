@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-const md5 = require('md5');
 
 function Login(props)
 {
@@ -20,8 +19,6 @@ function Login(props)
             return;
         }
 
-        const hashedPass = md5(loginPassword.value);
-
         // Change 'user' to 'username'
         var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
 
@@ -32,7 +29,7 @@ function Login(props)
 
             var res = await response.text();
 
-            if(res === "[]")
+            if(res === "")
             {
                 setMessage('User/Password combination incorrect');
             }
