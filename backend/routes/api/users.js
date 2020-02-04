@@ -5,18 +5,6 @@ const bcrypt = require('bcryptjs');
 // User Model
 const User = require('../../models/User');
 
-// router - GET api/users
-// descr - GET all users
-// access - Public
-
-// Don't need a get request of a sorted list of users
-
-/*router.get('/', (req, res) => {
-    User.find()
-        .sort({ name: -1 })
-        .then(Users => res.json(Users))
-})*/
-
 // router - POST api/users
 // descr -  Reads an exisiting user
 // access - Public
@@ -59,8 +47,9 @@ router.post('/register', (req, res) => {
     //       .catch(err => console.log(err))
 });
 
-// Work in Progress:
-// Returning UnhandledPromiseRejectionWarning
+// router - POST api/users/login
+// descr  - Login to user
+// access - User access
 router.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
@@ -73,12 +62,12 @@ router.post('/login', (req, res) => {
             bcrypt.compare(password, user.password, function(err, match){
                 
                 if (match)
-                    return res.json({ success : true })
+                    return res.json(user._id)
                 else
-                    return res.json({ incorrectPassword: true})
+                    return res.json({ incorrectPassword: "Incorrect password entered."})
         });
     }});
-    
+
 });
 
 module.exports = router;
