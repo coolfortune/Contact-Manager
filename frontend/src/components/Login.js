@@ -18,7 +18,6 @@ function Login(props)
             return;
         }
 
-        // Change 'user' to 'username'
         var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
 
         // Try login request
@@ -63,7 +62,6 @@ function Login(props)
 
     return(        
         <div id="loginDiv" class="form-group">
-
             <form>
                 <label for="loginName" class="text text-primary">Enter Username: </label>
                 <input type="text" class="form-control" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />

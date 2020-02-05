@@ -73,7 +73,7 @@ form{
 }
 
 .badLogin1{
-    position: fixed;
+    position: relative;
     top: 40vw;
     left: 42vw;
 }
@@ -264,7 +264,7 @@ table {
     bottom: 30vh;
     right: 20vh;
     z-index: 1;
-    background-color: purple;
+    /*background-color: purple;*/
     width: 30%;
     height: 30%;
     opacity: .9;
@@ -280,4 +280,20 @@ table {
     position: fixed;
     bottom: 20vh;
     right: 50vh;
+} 
+
+.ModalBody{
+    background-color: purple;
+    color: yellow;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.ModalButton{
+    background-color: rgb(36, 2, 49);
+    color: yellow;
+    position: relative;
+    right: 0;
+    bottom: 0;
 }
