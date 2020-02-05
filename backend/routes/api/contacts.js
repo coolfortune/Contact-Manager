@@ -12,6 +12,7 @@ Contact.find(payload)
         .then(contacts => res.json(contacts))
         .catch(err => console.log(err))
 })
+
 router.post('/:id/add', (req,res) => {
     const newContact = new Contact ({
         firstName: req.body.firstName,
@@ -25,10 +26,26 @@ router.post('/:id/add', (req,res) => {
     newContact.save().then(contact => res.json(Contact));
 });
 
-// Work in Progress
+// Working, but doesn't find error
+// Returns a JSON containing 1 if update succesful
+// 
+// Jeff can you check it? Thx
 router.put('/:id', (req, res) => {
-    Contact.find(req.params.id)
-           .then()
+
+    var contact = {};
+
+    Contact.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err) {
+        if (err) {
+            contact.status = 0;
+            return res.status(404).json({ message: "Contact not found" })
+        }
+        else {
+            contact.status = 1;
+        }
+
+        res.json(contact);
+    })
+
 });
 
 // route - Delete api/contacts/:id
@@ -36,7 +53,7 @@ router.put('/:id', (req, res) => {
 // access - Public (for now)
 router.delete('/:id', (req, res) => {
     Contact.findById(req.body)
-        .then(user => user.remove().then(() => res.json({ success: true })))
+        .then(contact => contact.remove().then(() => res.json({ success: true })))
         .catch(err => res.status(404).json({ success: false }))
 })
 
