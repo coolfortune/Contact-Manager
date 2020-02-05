@@ -94,6 +94,10 @@ form{
 .navbar {
     background-color: rgb(36, 2, 49);
     overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 70%;
   }
   
   /* Style the links inside the navigation bar */
@@ -224,4 +228,8 @@ table {
     right: 0;
     height: 60vh;
     width: 70vh;
+}
+
+.searchForm{
+    z-index: 1;
 }
