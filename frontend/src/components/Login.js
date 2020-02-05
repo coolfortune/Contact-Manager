@@ -50,7 +50,7 @@ function Login(props)
         }
         catch(e)
         {
-            console.log(err);
+            alert(e.toString());
             return;
         }
 

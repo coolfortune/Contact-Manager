@@ -84,7 +84,7 @@ form{
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
+    /* position: fixed; */
     font-size: 100%;
     margin: 0px 0px 0px 0px;
     min-height: 100vh;
@@ -232,4 +232,12 @@ table {
 
 .searchForm{
     z-index: 1;
+}
+
+.addForm{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
 }

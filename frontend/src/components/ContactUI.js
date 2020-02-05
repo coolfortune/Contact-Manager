@@ -5,9 +5,9 @@ function ContactUI()
     var contact = '';
     var search = '';
 
-    const [message,setMessage] = useState('');
-    const [searchResults,setResults] = useState('');
-    const [contactList,setContactList] = useState('');
+    // const [message,setMessage] = useState('');
+    // const [searchResults,setResults] = useState('');
+    // const [contactList,setContactList] = useState('');
 
     const addContact = async event => 
     {
