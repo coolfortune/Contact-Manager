@@ -159,6 +159,25 @@ table {
       width: 200px;
   }
 
+
+  .ShowList{
+    bottom: 0;
+  }
+
+  .btnStyle{
+      background: #c90404;
+      color: #fff;
+      border: none;
+      padding: 3px 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      float: right;
+  }
+
+  .btnStyle:hover {
+    background-color: rgb(160, 8, 8);
+  }
+
   #searchContactButton{
       position: fixed;
       top: 30vh;
