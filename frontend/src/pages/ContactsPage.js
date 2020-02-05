@@ -12,9 +12,7 @@ class ContactsPage extends Component
 			<div className="ContactsPage" >
 				<Navbar />				
 				<ContactsTitle />
-				<div style={ListStyle}>
-					<ContactList />
-				</div>
+				
 			
 				
 			</div>
@@ -22,11 +20,6 @@ class ContactsPage extends Component
 	};
 }
 
-const ListStyle = {
-	position: 'absolute',
-	width: '50%',
-	bottom: '0px',
-	right: '0',
-}
+
 
 export default ContactsPage;
