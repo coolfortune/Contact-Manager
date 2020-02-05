@@ -12,8 +12,6 @@ export class Contact extends Component {
         }
     }
 
-
-
     render() {
         const { firstName, lastName } = this.props.contact;
         return (
