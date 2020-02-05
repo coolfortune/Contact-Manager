@@ -6,7 +6,7 @@ import './styles.css';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ContactsPage from './pages/ContactsPage';
-import WelcomePage from './pages/WelcomePage';
+//import WelcomePage from './pages/WelcomePage';
 
 function App() {
 

@@ -84,7 +84,7 @@ form{
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
+    /* position: fixed; */
     font-size: 100%;
     margin: 0px 0px 0px 0px;
     min-height: 100vh;
@@ -94,6 +94,10 @@ form{
 .navbar {
     background-color: rgb(36, 2, 49);
     overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 70%;
   }
   
   /* Style the links inside the navigation bar */
@@ -243,4 +247,31 @@ table {
     right: 0;
     height: 60vh;
     width: 70vh;
+}
+
+.searchForm{
+    z-index: 1;
+}
+
+.addForm{
+    position: fixed;
+    bottom: 30vh;
+    right: 20vh;
+    z-index: 1;
+    background-color: purple;
+    width: 30%;
+    height: 30%;
+    opacity: .9;
+}
+
+#AddButton{
+    position: fixed;
+    bottom: 20vh;
+    right: 35vh;
+}
+
+#CancelButton{
+    position: fixed;
+    bottom: 20vh;
+    right: 50vh;
 }
