@@ -57,7 +57,8 @@ function SignUp()
 		}
 		catch(e)
 		{
-			alert(e.toString());
+			console.log(e);
+			return;
 		}
 	};
 
