@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchForm from './SearchForm';
+import EditModal from './EditModal';
 import ContactsPage from '../pages/ContactsPage';
 import ContactList from './ContactList';
 import AddForm from './AddForm';
@@ -25,7 +25,9 @@ function Navbar(props)
     {
         ReactDOM.render(
         <div>
-            <SearchForm />,
+            {/* <div className="Modal">
+            <EditModal />
+            </div> */}
             <ContactsPage />, 
 
         </div>,    
