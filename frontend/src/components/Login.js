@@ -18,7 +18,6 @@ function Login(props)
             return;
         }
 
-        // Change 'user' to 'username'
         var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
 
         // Try login request

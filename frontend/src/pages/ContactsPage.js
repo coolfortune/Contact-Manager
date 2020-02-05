@@ -12,12 +12,6 @@ class ContactsPage extends Component
 			<div className="ContactsPage" >
 				<Navbar />				
 				<ContactsTitle />
-<<<<<<< HEAD
-=======
-				
-			
-				
->>>>>>> e8fbdae7c3dae81c89ad2caf3bd6ee8a85a168e8
 			</div>
 		);
 	};
