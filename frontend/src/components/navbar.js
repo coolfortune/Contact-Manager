@@ -1,73 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import EditModal from './EditModal';
-import ContactsPage from '../pages/ContactsPage';
-import ContactList from './ContactList';
-import AddForm from './AddForm';
 
-function Navbar(props)
+function Navbar()
 {
-
-    const home = async event =>
-    {
-        ReactDOM.render(
-        <div>
-            <div style={ListStyle}>
-                <ContactList />
-            </div>
-            <ContactsPage />, 
-
-        </div>,    
-        document.getElementById('root'));
-
-    }
-    const search = async event =>
-    {
-        ReactDOM.render(
-        <div>
-            {/* <div className="Modal">
-            <EditModal />
-            </div> */}
-            <ContactsPage />, 
-
-        </div>,    
-        document.getElementById('root'));
-
-    }
-
-    const add = async event =>
-    {
-        ReactDOM.render(
-            <div>
-                <AddForm />,
-                <ContactsPage />, 
-            </div>,    
-            document.getElementById('root'));
-    
-    }
-
-    const logOut = async event =>
-    {
-        window.location.href = '/';
-    }
-
     return(
-        <div className="navbar">
-            
-           <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={home} >Home</button>
-           <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={search} >Search/Edit/Delete Contacts</button>
-           <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={add} >Add New Contact</button>
-           <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={logOut} >Logout</button>
-       </div>
-       );
-   }
-
-
-   const ListStyle = {
-	position: 'fixed',
-	width: '50%',
-	bottom: '0px',
-	right: '0',
+     <div className="navbar">
+        <a href=''><i class="fa fa-fw fa-search"></i> Search/Edit/Delete Contacts</a> 
+        <a href=''><i class="fa fa-fw fa-envelope"></i> Add New Contact</a> 
+        <a href='/'><i class="fa fa-fw fa-home"></i> Logout</a> 
+    </div>
+    );
 }
 
 export default Navbar;
