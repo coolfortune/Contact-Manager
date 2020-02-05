@@ -236,8 +236,23 @@ table {
 
 .addForm{
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 30vh;
+    right: 20vh;
     z-index: 1;
+    background-color: purple;
+    width: 30%;
+    height: 30%;
+    opacity: .9;
+}
 
+#AddButton{
+    position: fixed;
+    bottom: 20vh;
+    right: 35vh;
+}
+
+#CancelButton{
+    position: fixed;
+    bottom: 20vh;
+    right: 50vh;
 }

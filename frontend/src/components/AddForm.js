@@ -11,15 +11,9 @@ class App extends React.Component {
         <MDBInputGroup containerClassName="mb-3" hint="Phone number" />
         <MDBInputGroup containerClassName="mb-3" hint="Address" />
         <MDBInputGroup containerClassName="mb-3" hint="Email" />
-        {/* <MDBInputGroup
-          label="Your vanity URL"
-          containerClassName="mb-3"
-          prepend="https://example.com/users/"
-          id="basic-url"
-        />
-        <MDBInputGroup containerClassName="mb-3" prepend="$" append=".00" />
-        <MDBInputGroup prepend="With textarea" type="textarea" /> */}
          </div>
+         <button type="button" id="AddButton" class="btn btn-outline-primary"  >Add Contact</button>
+         <button type="button" id="CancelButton" class="btn btn-outline-primary" >Cancel</button>
       </MDBContainer>
     );
   }
