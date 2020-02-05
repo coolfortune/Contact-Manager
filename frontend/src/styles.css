@@ -258,7 +258,7 @@ table {
     bottom: 30vh;
     right: 20vh;
     z-index: 1;
-    background-color: purple;
+    /*background-color: purple;*/
     width: 30%;
     height: 30%;
     opacity: .9;

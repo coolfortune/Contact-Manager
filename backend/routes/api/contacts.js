@@ -6,6 +6,21 @@ const Contact = require('../../models/Contact');
 // route - Search api/contacts/:id
 // desc  - Searches for a contact
 // access - Public
+router.get('/:id', (req, res) => {
+
+const id = { userId: req.params.id };
+
+console.log(id);
+
+Contact.find(id)
+        .sort({ firstName: -1 })
+        .then(contacts => res.json(contacts))
+        .catch(err => console.log(err))
+})
+
+// route - Search api/contacts/:id
+// desc  - Searches for a contact
+// access - Public
 router.post('/:id', (req, res) => {
 
 const id = { userId: { $in: req.params.id }};
