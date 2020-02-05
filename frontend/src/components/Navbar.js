@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchForm from './SearchForm';
+import EditModal from './EditModal';
 import ContactsPage from '../pages/ContactsPage';
 import ContactList from './ContactList';
 import AddForm from './AddForm';
@@ -25,7 +25,6 @@ function Navbar(props)
     {
         ReactDOM.render(
         <div>
-            <SearchForm />,
             <ContactsPage />, 
 
         </div>,    
@@ -50,14 +49,15 @@ function Navbar(props)
     }
 
     return(
-     <div className="navbar">
-        <a href=''><i class="fa fa-fw fa-search"></i> Search/Edit/Delete Contacts</a> 
-        <a href=''><i class="fa fa-fw fa-envelope"></i> Add New Contact</a> 
-        <a href='/'><i class="fa fa-fw fa-home"></i> Logout</a> 
+        <div className="navbar">
+
+        <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={home} >Home</button>
+        <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={search} >Search/Edit/Delete Contacts</button>
+        <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={add} >Add New Contact</button>
+        <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={logOut} >Logout</button>
     </div>
     );
-        
-   }
+}
 
    const ListStyle = {
 	position: 'fixed',
