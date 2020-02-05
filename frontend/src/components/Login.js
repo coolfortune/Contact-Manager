@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-const md5 = require('md5');
-
 function Login(props)
 {
 
@@ -20,29 +18,34 @@ function Login(props)
             return;
         }
 
-        const hashedPass = md5(loginPassword.value);
-
         // Change 'user' to 'username'
         var js = JSON.stringify({username:loginName.value, password:loginPassword.value});
 
+        // Try login request
         try
         {
-            const response = await fetch('http://localhost:5000/api/users',
+            const response = await fetch('http://localhost:5000/api/users/login',
                 {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
 
-            var res = await response.text();
+            var res = await response.json();
 
-            if(res === "[]")
+            if(res.usernameNotFound)
             {
-                setMessage('User/Password combination incorrect');
+                setMessage('Username not found');
+            }
+            else if(res.incorrectPassword)
+            {
+                setMessage('Password combination incorrect');
             }
             else
             {
-                var user = {firstName:res.firstName,lastName:res.lastName,id:res.id}
-                localStorage.setItem('user_data', JSON.stringify(user));
+                // Sets user id to local storage (may be redundant, might remove)
+                var userId = res;
+                localStorage.setItem('user_data', userId);
 
                 setMessage('');
-                window.location.href = '/contacts';
+                // Goes to contacts page with the user's id
+                window.location.href = '/contacts/' + userId;
             }
         }
         catch(e)

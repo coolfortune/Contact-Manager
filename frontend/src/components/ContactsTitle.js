@@ -4,7 +4,7 @@ function ContactsTitle()
 {
 	return(
 		<font color="yellow">
-			<h1 id="contactsHeader">Mamba Contacts</h1>
+			<h3 id="contactsHeader">Mamba Contacts</h3>
 		</font>
 	);
 };

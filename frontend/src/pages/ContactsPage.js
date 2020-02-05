@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ContactsTitle from '../components/ContactsTitle';
-//import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar';
 //import Table from '../components/Table';
 import ContactUI from '../components/ContactUI';
 import '../styles.css';

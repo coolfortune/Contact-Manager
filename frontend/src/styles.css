@@ -4,10 +4,18 @@
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
     font-size: 100%;
-    margin: 0px 0px 0px 0px;
-    min-height: 100vh; 
+    min-height: 100vh;
+}
+
+.WelcomePage{
+    background-image: url(./img/kobeDrafted.jpg);
+    background-size: auto;
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 100%;
+    min-height: 100vh;
 }
 
 h1{
@@ -33,6 +41,19 @@ h2{
     right: 56vw;
     width: 0vw;
     height: 0vw;
+    padding: 0vw 2vw 0vw 0vw;
+}
+
+h3{
+    font-size: 5vw;
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 5px 5px 10px purple;
+    position: fixed;
+    top: 3vw;
+    right: 66vw;
+    width: 0vw;
+    height: 100vw;
     padding: 0vw 2vw 0vw 0vw;
 }
   
@@ -69,11 +90,33 @@ form{
     min-height: 100vh;
 }
 
-.navbar{
-    width: 100%;
-    background-color: lightsteelblue;
-    overflow: auto;
-}
+/* Add a black background color to the top navigation */
+.navbar {
+    background-color: rgb(36, 2, 49);
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .navbar a {
+    float: left;
+    color: yellow;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .navbar a:hover {
+    background-color: purple;
+    color: yellow;
+  }
+  
+  /* Add a color to the active/current link */
+  .navbar a.active {
+    background-color: yellow;
+    color: purple;
+  }
 
 table {
     border-collapse: collapse;
@@ -126,18 +169,46 @@ table {
     font-size: x-large;
 }
 
-  #searchText, #ContactText{
+  #searchFirst, #searchLast, #searchPhone, #searchAddress, #searchEmail, #ContactText{
       background-color: yellow;
       color: purple;
       font-size: medium;
       width: 200px;
   }
 
-  #searchText{
+  #searchFirst{
       position: fixed;
       top: 35vh;
       right: 80vh;
       text-align: center;
+  }
+
+  #searchLast{
+    position: fixed;
+    top: 39vh;
+    right: 80vh;
+    text-align: center;
+  }
+
+  #searchPhone{
+    position: fixed;
+    top: 43vh;
+    right: 80vh;
+    text-align: center;
+  }
+
+  #searchAddress{
+    position: fixed;
+    top: 47vh;
+    right: 80vh;
+    text-align: center;
+  }
+
+  #searchEmail{
+    position: fixed;
+    top: 51vh;
+    right: 80vh;
+    text-align: center;
   }
 
   #ContactText{
