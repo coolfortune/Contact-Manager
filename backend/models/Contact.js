@@ -20,7 +20,7 @@ const ContactSchema = new Schema({
         type: String
     },
     userId: {
-        type: Number,
+        type: String,
         required: true
     }}, 
     {

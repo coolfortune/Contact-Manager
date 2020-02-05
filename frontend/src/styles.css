@@ -1,5 +1,5 @@
 .LoginPage, .RegisterPage{
-    background-image: url(./img/kobe.jpg);
+    background-image: url(./img/kobeBlurred.jpg);
     background-size: cover;
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
@@ -79,7 +79,7 @@ form{
 }
 
 .ContactsPage{
-    background-image: url(./img/kobe3.jpg);
+    background-image: url(./img/kobe3cleanedUp.jpg);
     background-size: cover;
     background-blend-mode: soft-light;
     background-repeat: no-repeat;

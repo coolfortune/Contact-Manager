@@ -9,6 +9,9 @@ import ContactsPage from './pages/ContactsPage';
 import WelcomePage from './pages/WelcomePage';
 
 function App() {
+
+  
+
   return (
     <Router >
       <Switch>

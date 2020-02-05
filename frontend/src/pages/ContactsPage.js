@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ContactsTitle from '../components/ContactsTitle';
 import Navbar from '../components/Navbar';
-//import Table from '../components/Table';
 import ContactUI from '../components/ContactUI';
 import '../styles.css';
 
-function ContactsPage()
+class ContactsPage extends Component
 {
-	return(
-		<div className="ContactsPage" >
-			<Navbar />
-			<ContactsTitle />
-			<ContactUI />
-			
-		</div>
-	);
-};
+	render(){
+		return(
+			<div className="ContactsPage" >
+				<Navbar />				
+				<ContactsTitle />
+				<ContactUI />
+			</div>
+		);
+	};
+}
 
 export default ContactsPage;
