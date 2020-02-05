@@ -11,7 +11,6 @@ class ContactsPage extends Component
 			<div className="ContactsPage" >
 				<Navbar />				
 				<ContactsTitle />
-				<ContactUI />
 			</div>
 		);
 	};

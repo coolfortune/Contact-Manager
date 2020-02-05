@@ -1,30 +1,69 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import { MDBContainer, MDBInput, MDBBtn, MDBModal, MDBModalHeader, MDBModalBody, MDBIcon } from "mdbreact";
 
-class SearchForm extends React.Component 
-{
-    constructor(props) 
-    {
-        super(props);
-         this.state = {searchBy: 'First Name' };
-    }
+class SearchForm extends Component {
+  state = {
+    modal: false
+  };
 
-    render() 
-    { 
-        return (
-            <form class="searchForm">
-            <select value={this.state.searchBy}>
-                <option value="Last Name">First Name</option>
-                <option value="Last Name">Last Name</option>
-                <option value="Phone">Phone number</option>
-                <option value="Address">Address</option>
-                <option value="Email">Email</option>
-            </select>
-            </form>
-        );
-    }
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  };
+
+  logValue = value => {
+    console.log(value);
+  };
+
+  render() {
+    return (
+      <MDBContainer>
+        <MDBBtn onClick={this.toggle} className="mx-auto">
+          launch modal contact
+        </MDBBtn>
+        <MDBModal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          size="md"
+          cascading
+        >
+          <MDBModalHeader
+            toggle={this.toggle}
+            titleClass="d-inline title"
+            className="text-center light-blue darken-3 white-text"
+          >
+            <MDBIcon icon="pencil-alt" />
+            Contact From
+          </MDBModalHeader>
+          <MDBModalBody>
+            <MDBInput label="Your name"  />
+            <MDBInput label="Your email"  iconClass="dark-grey" />
+            <MDBInput label="Subject" />
+            <MDBInput
+              label="Your message"
+              type="textarea"
+              rows="2"
+              icon="pencil-alt"
+              iconClass="dark-grey"
+            />
+            <div className="text-center mt-1-half">
+              <MDBBtn
+                color="info"
+                className="mb-2"
+                onClick={this.toggle}
+              >
+                send
+                <MDBIcon icon="paper-plane" className="ml-1" />
+              </MDBBtn>
+            </div>
+          </MDBModalBody>
+        </MDBModal>
+      </MDBContainer>
+    );
+  }
 }
-ReactDOM.render(<SearchForm />, document.getElementById('root'));
+
 export default SearchForm;
 
         

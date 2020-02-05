@@ -2,6 +2,7 @@ import React from "react";
 import { MDBContainer, MDBInputGroup } from "mdbreact";
 
 class App extends React.Component {
+  
   render() {
     return (
       <MDBContainer>
@@ -13,7 +14,7 @@ class App extends React.Component {
         <MDBInputGroup containerClassName="mb-3" hint="Email" />
          </div>
          <button type="button" id="AddButton" class="btn btn-outline-primary"  >Add Contact</button>
-         <button type="button" id="CancelButton" class="btn btn-outline-primary" >Cancel</button>
+         <a type="button" id="CancelButton" class="btn btn-outline-primary" href ='/contacts/:id' >Cancel</a>
       </MDBContainer>
     );
   }
