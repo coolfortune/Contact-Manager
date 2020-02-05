@@ -9,6 +9,9 @@ import PropTypes from "prop-types";
 export class ContactList extends Component {
     // this is hard coded for now but is should be fetched from the database
     componentDidMount(){
+
+        contacts
+
         fetch('http://localhost:5000/api/users/login',
         { method: 'GET',headers: {
             'Content-Type': 'application/json',
