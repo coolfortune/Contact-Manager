@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EditModal from './EditModal';
 import ContactsPage from '../pages/ContactsPage';
 import ContactList from './ContactList';
 import AddForm from './AddForm';
