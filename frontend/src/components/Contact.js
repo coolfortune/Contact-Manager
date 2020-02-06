@@ -22,20 +22,21 @@ export class Contact extends Component {
     }
 
     deleteContact = (_id) => {
+
+       if(window.confirm("You are about to delete " + this.props.contact.firstName + " " + this.props.contact.lastName + ". Confirm?"))
+        {  
         const body = { _id : _id }
         const userId = window.location.pathname;
         const url = "http://localhost:5000/api" + userId;
         console.log(body)
 
         axios.delete(url, { data: body })
-        .then(res => {
-            if(!res.data.success) {
-                alert('Deletion error!');
-            } else {
-                alert('Deleted Successfully!');
-            }})
+        
         .catch(err => console.log(err))
+       }
     };
+
+
          
 
     render() {
