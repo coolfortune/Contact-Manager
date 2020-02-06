@@ -49,7 +49,7 @@ const editBtnStyle = {
 }
 
 const btnStyle = {
-    background: '#ff0000',
+    background: '#ff4136',
     color: '#fff',
     border: 'none',
     padding: '3px 11px',
