@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Contact from "./Contact.js";
 import axios from 'axios'
 import "../styles.css";
-
-
+import ReactDOM from 'react-dom';
 
 
 export class ContactList extends Component {
@@ -28,15 +27,15 @@ export class ContactList extends Component {
 
             var contactArray = this.state.contacts;
 
-
             return contactArray.map(contact => (
                 <div className="ShowList">
-        <Contact key={contact._id} contact={contact} />
+        <Contact key={contact._id} contact={contact} >
+              </Contact>
       </div>
     ));
   }
 }
 
-
+ReactDOM.render(<ContactList />, document.getElementById('root'));
 
 export default ContactList;

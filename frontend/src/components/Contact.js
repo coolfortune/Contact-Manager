@@ -16,22 +16,6 @@ export class Contact extends Component {
         }
     }
     
-    delete (id) {
-        const userId = window.location.pathname;
-        axios.delete('http://localhost:5000/api' + userId,
-            {
-                "_id":id
-            })
-            .then(res =>{
-                if(res.success){
-                    alert("Nice!")
-                }
-                else alert("NOOO")
-
-            })
-    }
-
-
     show()
     {
         alert('edit button works')
