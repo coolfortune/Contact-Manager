@@ -6,13 +6,13 @@ class App extends React.Component {
 		this.state = {
 			firstName: "",
 			lastName: "",
-			phoneNumber: null,
+			phoneNumber: "",
 			address: "",
 			email: ""
 		};
 
-		this.state2 = "";
-		
+		this.message = "";
+
 		this.handleChange = this.handleChange.bind(this);
 		this.addContact = this.addContact.bind(this);
 	}
@@ -21,15 +21,21 @@ class App extends React.Component {
 		const name = event.target.name;
 		const value = event.target.value;
 		this.setState({ [name]: value });
-		console.log(this.state.firstName);
 	}
 
 	addContact(event) {
 		event.preventDefault();
-	
 
 		if (this.state.firstName === "") {
-			this.state2 = 'Please enter a First Name'
+		this.setState({
+			firstName: "",
+			lastName: "",
+			phoneNumber: "",
+			address: "",
+			email: ""
+		});
+			this.message = "Please enter a First Name"
+			return;
 		}
 
 		const payload = JSON.stringify(this.state);
@@ -49,12 +55,12 @@ class App extends React.Component {
 		this.setState({
 			firstName: "",
 			lastName: "",
-			phoneNumber: null,
+			phoneNumber: "",
 			address: "",
 			email: ""
 		});
 
-		this.state2 = 'Contact created successfully';
+		this.message = "Contact created successfully";
 
 		return;
 	}
@@ -63,67 +69,69 @@ class App extends React.Component {
 		return (
 			<div class="form-group">
 				<form class="addForm">
-
-				<label for="loginName" class="text text-primary">Please enter new contact info</label>
-				<input
-					type="text"
-					name="firstName"
-					placeholder="First Name"
-					class="form-control"
-					onChange={this.handleChange}
-					value={this.state.firstName}
-				/>
-				<input
-					type="text"
-					name="lastName"
-					placeholder="Last Name"
-					class="form-control"
-					onChange={this.handleChange}
-					value={this.state.lastName}
-				/>
-				<input
-					type="text"
-					name="phoneNumber"
-					placeholder="Phone Number"
-					class="form-control"
-					onChange={this.handleChange}
-					value={this.state.phoneNumber}
-				/>
-				<input
-					type="text"
-					name="address"
-					placeholder="Address"
-					class="form-control"
-					onChange={this.handleChange}
-					value={this.state.address}
-				/>
-				<input
-					type="text"
-					name="email"
-					placeholder="Email"
-					class="form-control"
-					onChange={this.handleChange}
-					value={this.state.email}
-				/>
-				<button
-					type="submit"
-					id="AddButton"
-					class="btn btn-primary"
-					onClick={this.addContact}
-				>
-					Add Contact
-				</button>
-				<a
-					type="button"
-					id="CancelButton"
-					class="btn btn-outline-primary"
-					href={window.location.pathname}
-				>
-					Cancel
-				</a>
-
+					<label for="addForm" class="text text-primary">
+						Please enter new contact info
+					</label>
+					<input
+						type="text"
+						name="firstName"
+						placeholder="First Name"
+						class="form-control"
+						onChange={this.handleChange}
+						value={this.state.firstName}
+					/>
+					<input
+						type="text"
+						name="lastName"
+						placeholder="Last Name"
+						class="form-control"
+						onChange={this.handleChange}
+						value={this.state.lastName}
+					/>
+					<input
+						type="text"
+						name="phoneNumber"
+						placeholder="Phone Number"
+						class="form-control"
+						onChange={this.handleChange}
+						value={this.state.phoneNumber}
+					/>
+					<input
+						type="text"
+						name="address"
+						placeholder="Address"
+						class="form-control"
+						onChange={this.handleChange}
+						value={this.state.address}
+					/>
+					<input
+						type="text"
+						name="email"
+						placeholder="Email"
+						class="form-control"
+						onChange={this.handleChange}
+						value={this.state.email}
+					/>
+					<button
+						type="submit"
+						id="AddButton"
+						class="btn btn-primary"
+						onClick={this.addContact}
+					>
+						Add Contact
+					</button>
+					<a
+						type="button"
+						id="CancelButton"
+						class="btn btn-outline-primary"
+						href={window.location.pathname}
+					>
+						Cancel
+					</a>
 				</form>
-				<span id="loginResult" class="badLogin1 text text-warning" value={this.state2} />
+				<label for="addForm" class="badLogin3 text text-warning">
+					{this.message}
+				</label>
 			</div>
 		);
 	}
