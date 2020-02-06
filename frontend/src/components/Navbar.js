@@ -63,7 +63,7 @@ function Navbar(props)
    const ListStyle = {
     position: 'absolute',
     width: '50%',
-    bottom: '0px',
+    bottom: '0',
     right: '0'
 }
 
