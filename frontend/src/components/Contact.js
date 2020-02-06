@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import EditForm from './EditForm'
 import ContactsPage from '../pages/ContactsPage'
 import axios from 'axios'
+import ContactList from './ContactList'
 
 export class Contact extends Component {
 
@@ -52,32 +52,32 @@ export class Contact extends Component {
                     name="firstName"
                     class="form-control"
                     onChange={this.handleChange}
-                    value={a.firstName}
+                    placeholder={a.firstName}
                 />
                 <input
                     type="text"
                     name="lastName"
                     onChange={this.handleChange}
                     class="form-control"
-                    value={a.lastName}
+                    placeholder={a.lastName}
                 />
                 <input
                     type="text"
                     name="phoneNumber"
                     class="form-control"
                     onChange={this.handleChange}
-                    value={a.phoneNumber}
+                    placeholder={a.phoneNumber}
                 />
                 <input
                     type="text"
                     name="address"
-                    value={a.address}
+                    placeholder={a.address}
                     class="form-control"
                 />
                 <input
                     type="text"
                     name="email"
-                    value={a.email}
+                    placeholder={a.email}
                     class="form-control"
                 />
                 <button
@@ -107,9 +107,9 @@ export class Contact extends Component {
 
     deleteContact = (_id) => {
 
-       if(window.confirm("You are about to delete " + this.props.contact.firstName + " " + this.props.contact.lastName + ". Confirm?"))
-        {  
-        const body = { _id : _id }
+        if(window.confirm("You are about to delete " + this.props.contact.firstName + " " + this.props.contact.lastName + ". Confirm?"))
+         {  
+         const body = { _id : _id }
         const userId = window.location.pathname;
         const url = "http://localhost:5000/api" + userId;
         console.log(body)
@@ -117,7 +117,18 @@ export class Contact extends Component {
         axios.delete(url, { data: body })
         
         .catch(err => console.log(err))
-       }
+        // ReactDOM.render(
+        //     <div>
+        //         {/* <div className="ContactList">
+        //             <ContactList />
+        //         </div> */}
+        //         <ContactsPage />, 
+    
+        //     </div>,    
+        //     document.getElementById('root'));
+    }
+
+      
     };
 
 

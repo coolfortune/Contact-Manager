@@ -12,7 +12,7 @@ function Navbar(props)
     {
         ReactDOM.render(
         <div>
-            <div style={ListStyle}>
+            <div className="ContactList">
                 <ContactList />
             </div>
             <ContactsPage />, 
@@ -60,11 +60,11 @@ function Navbar(props)
     );
 }
 
-   const ListStyle = {
-	position: 'fixed',
-	width: '30%',
-	bottom: '30vh',
-	right: '30vh',
-}
+//    const ListStyle = {
+// 	position: 'fixed',
+// 	width: '30%',
+// 	bottom: '30vh',
+// 	right: '30vh',
+// }
 
 export default Navbar; 

@@ -274,3 +274,9 @@ h4{
     right: 50vh;
 } 
 
+.ContactList{
+    position: fixed;
+    width: 30%;
+    bottom: 30vh;
+    right: 30vh;
+}
