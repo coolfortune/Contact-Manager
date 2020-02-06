@@ -13,7 +13,7 @@ class App extends React.Component {
 		};
 
 		this.state2 = "";
-
+		
 		this.handleChange = this.handleChange.bind(this);
 		this.addContact = this.addContact.bind(this);
 	}
@@ -55,7 +55,7 @@ class App extends React.Component {
 			email: ""
 		};
 
-		this.state2 = 'Contact created successfully'
+		this.state2 = 'Contact created successfully';
 
 		return;
 	}
