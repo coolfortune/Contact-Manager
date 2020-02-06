@@ -69,65 +69,66 @@ class App extends React.Component {
 		return (
 			<div class="form-group">
 				<form class="addForm">
-					<label for="addForm" class="text text-primary">
-						Please enter new contact info
-					</label>
-					<input
-						type="text"
-						name="firstName"
-						placeholder="First Name"
-						class="form-control"
-						onChange={this.handleChange}
-						value={this.state.firstName}
-					/>
-					<input
-						type="text"
-						name="lastName"
-						placeholder="Last Name"
-						class="form-control"
-						onChange={this.handleChange}
-						value={this.state.lastName}
-					/>
-					<input
-						type="text"
-						name="phoneNumber"
-						placeholder="Phone Number"
-						class="form-control"
-						onChange={this.handleChange}
-						value={this.state.phoneNumber}
-					/>
-					<input
-						type="text"
-						name="address"
-						placeholder="Address"
-						class="form-control"
-						onChange={this.handleChange}
-						value={this.state.address}
-					/>
-					<input
-						type="text"
-						name="email"
-						placeholder="Email"
-						class="form-control"
-						onChange={this.handleChange}
-						value={this.state.email}
-					/>
-					<button
-						type="submit"
-						id="AddButton"
-						class="btn btn-primary"
-						onClick={this.addContact}
-					>
-						Add Contact
-					</button>
-					<a
-						type="button"
-						id="CancelButton"
-						class="btn btn-outline-primary"
-						href={window.location.pathname}
-					>
-						Cancel
-					</a>
+
+				<label for="loginName" class="text text-primary">Please enter new contact info</label>
+				<input
+					type="text"
+					name="firstName"
+					placeholder="First Name"
+					class="form-control"
+					onChange={this.handleChange}
+					value={this.state.firstName}
+				/>
+				<input
+					type="text"
+					name="lastName"
+					placeholder="Last Name"
+					class="form-control"
+					onChange={this.handleChange}
+					value={this.state.lastName}
+				/>
+				<input
+					type="text"
+					name="phoneNumber"
+					placeholder="Phone Number"
+					class="form-control"
+					onChange={this.handleChange}
+					value={this.state.phoneNumber}
+				/>
+				<input
+					type="text"
+					name="address"
+					placeholder="Address"
+					class="form-control"
+					onChange={this.handleChange}
+					value={this.state.address}
+				/>
+				<input
+					type="text"
+					name="email"
+					placeholder="Email"
+					class="form-control"
+					onChange={this.handleChange}
+					value={this.state.email}
+				/>
+				<button
+					type="submit"
+					id="AddButton"
+					class="btn btn-primary"
+					onClick={this.addContact}
+				>
+					Add Contact
+				</button>
+				<a
+					type="button"
+					id="CancelButton"
+					class="btn btn-outline-primary"
+					href={window.location.pathname}
+					
+				>
+					Cancel
+				</a>
+
 				</form>
 				<label for="addForm" class="badLogin3 text text-warning">
 					{this.message}
