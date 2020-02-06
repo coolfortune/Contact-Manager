@@ -46,15 +46,15 @@ class App extends React.Component {
 				return;
 			});
 
-		this.state = {
+		this.setState({
 			firstName: "",
 			lastName: "",
 			phoneNumber: null,
 			address: "",
 			email: ""
-		};
+		});
 
-		this.state2 = 'Contact created successfully';
+		this.setState('Contact created successfully');
 
 		return;
 	}
