@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import ReactDOM from 'react-dom'
-import confirmDelete from './confirmDelete'
 
 export class Contact extends Component {
 
@@ -18,10 +16,6 @@ export class Contact extends Component {
         }
     }
     
-<<<<<<< HEAD
-   
-=======
->>>>>>> 987c654028c3b14e223c71f673269b275e7077ad
     show()
     {
         alert('edit button works')
