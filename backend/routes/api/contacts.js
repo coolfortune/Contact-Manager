@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Contact = require('../../models/Contact');
+const User = require('../../models/User');
 
 // route - Search api/contacts/:id
 // desc  - Searches for a contact
@@ -10,7 +11,9 @@ router.get('/:id', (req, res) => {
 
 const id = { userId: req.params.id };
 
+
 console.log(id);
+
 
 Contact.find(id)
         .sort({ firstName: -1 })
@@ -18,22 +21,21 @@ Contact.find(id)
         .catch(err => console.log(err))
 })
 
-// route - Search api/contacts/:id
-// desc  - Searches for a contact
-// access - Public
-router.post('/:id', (req, res) => {
-
-const id = { userId: { $in: req.params.id }};
-const payload = { ...req.body, ...id};
-
-console.log(payload);
-
-Contact.find(payload)
-        .sort({ firstName: -1 })
-        .then(contacts => res.json(contacts))
-        .catch(err => console.log(err))
+router.post('/:id/search', (req, res) => {
+    
+    const id = { userId: { $in: req.params.id }};
+    const payload = { ...req.body, ...id};
+    
+    console.log(payload);
+    
+    Contact.find(payload)
+    .then(contacts => res.json(contacts))
+    .catch(err => console.log(err))
 })
 
+// route - Update api/contacts/:id
+// desc  - Updates a contact
+// access - Public
 router.post('/:id/add', (req,res) => {
 
     const newContact = new Contact ({
@@ -70,9 +72,10 @@ router.put('/:id', (req, res) => {
 // access - Public
 router.delete('/:id', (req, res) => {
 
+    console.log(req.body)
     Contact.findById(req.body)
         .then(contact => contact.remove().then(() => res.json({ success: true })))
-        .catch(err => res.status(404).json({ success: false }))
+        .catch(err => res.json({ success: false }))
 });
 
 module.exports = router;

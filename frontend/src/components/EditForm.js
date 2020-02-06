@@ -1,67 +1,128 @@
-import React from 'react';
-// import ReactDOM, { render } from 'react-dom';
-// import ContactsPage from '../pages/ContactsPage';
+import React, { useState } from "react";
+import { MDBContainer, MDBInputGroup } from "mdbreact";
+import axios from 'axios'
 
-function EditForm ()
-{
-    
-    // var first = props.firstName;
-    // var last = props.lastName;
-    
-    return(
-        <div class="form-group">
-        <form class="addForm">
 
-        <label for="loginName" class="text text-primary">{this.props.contact.firstName} </label>
-        <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            class="form-control"
-        />
-        <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            class="form-control"
-        />
-        <input
-            type="text"
-            name="phoneNumber"
-            placeholder="Phone Number"
-            class="form-control"
-        />
-        <input
-            type="text"
-            name="address"
-            placeholder="Address"
-            class="form-control"
-        />
-        <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            class="form-control"
-        />
-        <button
-            type="submit"
-            id="AddButton"
-            class="btn btn-primary"
-        >
-            Edit Contact
-        </button>
-        <a
-            type="button"
-            id="CancelButton"
-            class="btn btn-outline-primary"
-            href={window.location.pathname}
-        >
-            Cancel
-        </a>
+class EditForm extends React.Component {
 
-        </form>
-    </div>);
+	constructor(props) {
+        super(props)
 
-};
+        this.onChangeFirstName = this.onChangeFirstName.bind(this)
+        this.onChangeLastName = this.onChangeLastName.bind(this)
+        this.onChangePhoneNumber = this.onChangePhoneNumber.bind(this)
+        this.onChangeAddress = this.onChangeAddress.bind(this)
+        this.onChangeEmail = this.onChangeEmail.bind(this)
+
+        this.state = {
+			firstName: "",
+			lastName: "",
+			phoneNumber: null,
+			address: "",
+			email: ""
+		};
+
+	}
+	
+
+	onChangeFirstName(event) {
+        this.setState({ firstName: event.target.value })
+    }
+    onChangeLastName(event) {
+        this.setState({ lastName: event.target.value })
+    }
+    onChangePhoneNumber(event) {
+        this.setState({ phoneNumber: event.target.value })
+    }
+    onChangeAddress(event) {
+        this.setState({ address: event.target.value })
+    }
+    onChangeEmail(event) {
+        this.setState({ email: event.target.value })
+    }
+
+    onSubmit(event) {
+        event.preventDefault();
+
+        const userId = window.location.pathname;
+        
+        const contact = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            phoneNumber: this.state.phoneNumber,
+            address: this.state.address,
+            email: this.state.email
+        }
+
+        axios.get('http://localhost:5000/api' + userId, contact)
+        .then(res => {
+            console.log(res.data)
+            console.log('Student succesfully updated')
+        }).catch((error) => {
+            console.log(error)
+        })
+
+        
+    }
+
+	render() {
+		return (
+			<div className="editForm">
+				<input
+					type="text"
+					name="firstName"
+					placeholder="First Name"
+					onChange={this.handleChange}
+					value={this.state.firstName}
+				/>
+				<input
+					type="text"
+					name="lastName"
+					placeholder="Last Name"
+					onChange={this.handleChange}
+					value={this.state.lastName}
+				/>
+				<input
+					type="text"
+					name="phoneNumber"
+					placeholder="Phone Number"
+					onChange={this.handleChange}
+					value={this.state.phoneNumber}
+				/>
+				<input
+					type="text"
+					name="address"
+					placeholder="Address"
+					onChange={this.handleChange}
+					value={this.state.address}
+				/>
+				<input
+					type="text"
+					name="email"
+					placeholder="Email"
+					onChange={this.handleChange}
+					value={this.state.email}
+				/>
+				<button
+					type="submit"
+					id="AddButton"
+					class="btn btn-primary"
+					onClick={this.addContact}
+				>
+					Add Contact
+				</button>
+				<a
+					type="button"
+					id="CancelButton"
+					class="btn btn-outline-primary"
+					href="/contacts/:id"
+				>
+					Cancel
+				</a>
+				<span id="loginResult" class="badLogin1 text text-warning" value={this.state2} />
+			</div>
+		);
+	}
+}
 
 export default EditForm;

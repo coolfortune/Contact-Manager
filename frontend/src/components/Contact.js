@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import EditForm from './EditForm'
 import ContactsPage from '../pages/ContactsPage'
+import axios from 'axios'
 
 export class Contact extends Component {
 
@@ -21,9 +22,12 @@ export class Contact extends Component {
         this.show = this.show.bind(this);
     }
 
-    getSyle = () => {
+
+    
+    getStyle = () => {
         return {
-            background : '#f4f4f4',
+            background : 'rgb(36, 2, 49)',
+            color: 'yellow',
             padding: '3px',
             borderBottom: '1px #ccc dotted'
         }
@@ -100,12 +104,29 @@ export class Contact extends Component {
             document.getElementById('root'));
     
     }
+
+    deleteContact = (_id) => {
+
+       if(window.confirm("You are about to delete " + this.props.contact.firstName + " " + this.props.contact.lastName + ". Confirm?"))
+        {  
+        const body = { _id : _id }
+        const userId = window.location.pathname;
+        const url = "http://localhost:5000/api" + userId;
+        console.log(body)
+
+        axios.delete(url, { data: body })
+        
+        .catch(err => console.log(err))
+       }
+    };
+
+
          
 
     render() {
-        const { firstName, lastName } = this.props.contact;
+        const { firstName, lastName, _id } = this.props.contact;
         return (
-            <div style = {this.getSyle()}>
+            <div style = {this.getStyle()}>
                 <p>
                     <button type="button" style={btnStyle} >x</button>
                     <button style={editBtnStyle} onClick={() => this.show(this.props.contact)}>Edit</button>
@@ -122,13 +143,15 @@ Contact.propTypes = {
 }
 
 const editBtnStyle = {
-    background: 'grey',
-    color: 'white',
+    background: 'yellow',
+    color: 'rgb(36, 2, 49)',
     borderRadius: '50%',
     border: 'none',
     cursor: 'pointer',
     padding: '3px',
-    float: 'right'
+    float: 'right',
+    right: '20vh',
+    positon: 'relative'
 }
 
 const btnStyle = {
@@ -137,7 +160,7 @@ const btnStyle = {
     border: 'none',
     padding: '3px 11px',
     borderRadius:  '70%',
-    cursor: 'pointer',
+    cursor: 'solid',
     float: 'right'
 }
 

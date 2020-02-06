@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 class App extends React.Component {
 	constructor(props) {
@@ -6,13 +6,13 @@ class App extends React.Component {
 		this.state = {
 			firstName: "",
 			lastName: "",
-			phoneNumber: null,
+			phoneNumber: "",
 			address: "",
 			email: ""
 		};
 
-		this.state2 = "";
-		
+		this.message = "";
+
 		this.handleChange = this.handleChange.bind(this);
 		this.addContact = this.addContact.bind(this);
 	}
@@ -21,15 +21,21 @@ class App extends React.Component {
 		const name = event.target.name;
 		const value = event.target.value;
 		this.setState({ [name]: value });
-		console.log(this.state.firstName);
 	}
 
 	addContact(event) {
 		event.preventDefault();
-	
 
 		if (this.state.firstName === "") {
-			this.state2 = 'Please enter a First Name'
+		this.setState({
+			firstName: "",
+			lastName: "",
+			phoneNumber: "",
+			address: "",
+			email: ""
+		});
+			this.message = "Please enter a First Name"
+			return;
 		}
 
 		const payload = JSON.stringify(this.state);
@@ -49,12 +55,12 @@ class App extends React.Component {
 		this.setState({
 			firstName: "",
 			lastName: "",
-			phoneNumber: null,
+			phoneNumber: "",
 			address: "",
 			email: ""
 		});
 
-		this.state2 = 'Contact created successfully';
+		this.message = "Contact created successfully";
 
 		return;
 	}
@@ -124,7 +130,9 @@ class App extends React.Component {
 				</a>
 
 				</form>
-				<span id="loginResult" class="badLogin1 text text-warning" value={this.state2} />
+				<label for="addForm" class="badLogin3 text text-warning">
+					{this.message}
+				</label>
 			</div>
 		);
 	}
