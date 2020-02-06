@@ -10,14 +10,12 @@ const path = require("path");
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
-
-
 const app = express();
 
 const db = require("./config/keys.js").mongoURI;
 
 mongoose
-	.connect(db, { useNewUrlParser: true })
+	.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
 	.then(() => console.log("MongoDB Connected.."))
 	.catch(err => console.log(err));
 
