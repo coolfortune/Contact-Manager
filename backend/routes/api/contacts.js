@@ -18,8 +18,8 @@ Contact.find(id)
         .catch(err => console.log(err))
 })
 
-// route - Search api/contacts/:id
-// desc  - Searches for a contact
+// route - Update api/contacts/:id
+// desc  - Updates a contact
 // access - Public
 router.post('/:id', (req, res) => {
 
@@ -29,7 +29,6 @@ const payload = { ...req.body, ...id};
 console.log(payload);
 
 Contact.find(payload)
-        .sort({ firstName: -1 })
         .then(contacts => res.json(contacts))
         .catch(err => console.log(err))
 })
@@ -70,9 +69,10 @@ router.put('/:id', (req, res) => {
 // access - Public
 router.delete('/:id', (req, res) => {
 
+    console.log(req.body)
     Contact.findById(req.body)
         .then(contact => contact.remove().then(() => res.json({ success: true })))
-        .catch(err => res.status(404).json({ success: false }))
+        .catch(err => res.json({ success: false }))
 });
 
 module.exports = router;
