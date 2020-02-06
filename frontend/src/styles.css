@@ -18,10 +18,15 @@
     min-height: 100vh;
 }
 
-.container{
-  height: 100px;
-  width: 100px;
-  background-color: green;
+.ContactsPage{
+    background-image: url(./img/kobe3cleanedUp.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 100%;
+    margin: 0px 0px 0px 0px;
+    min-height: 100vh;
 }
 
 h1{
@@ -63,14 +68,27 @@ h3{
     padding: 0vw 2vw 0vw 0vw;
 }
   
-form{
-    position: fixed;
+.LoginForm, .Signup{
+    position: absolute;
     margin-top: 28vw;
     margin-left: 42vw;
     white-space: nowrap;
     width: fit-content;
     line-height: .5em;
 }
+
+.searchForm{
+    z-index: 1;
+}
+
+.addForm{
+    position: absolute;
+    bottom: 30vh;
+    right: 20vh;
+    z-index: 1;
+    width: 30%;
+    height: 30%;
+} 
 
 .badLogin1{
     position: relative;
@@ -84,17 +102,7 @@ form{
     left: 42vw;
 }
 
-.ContactsPage{
-    background-image: url(./img/kobe3cleanedUp.jpg);
-    background-size: cover;
-    background-blend-mode: soft-light;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* position: fixed; */
-    font-size: 100%;
-    margin: 0px 0px 0px 0px;
-    min-height: 100vh;
-}
+
 
 /* Add a black background color to the top navigation */
 .navbar {
@@ -128,43 +136,12 @@ form{
     color: purple;
   }
 
-table {
-    border-collapse: collapse;
-    width: 50%;
-    min-height: 100vh;
-    margin: 8vw 0vw 0vw 20vw;
-  }
-  
-  th{
-    text-align: left;
-    padding: 8px;
-    border: 1px solid #ddd;
-    background-color: purple;
-    color: yellow;
-  }
-  td{
-      text-align: left;
-      padding: 8px;
-      border: 1px solid #ddd;
-      background-color: yellow;
-  }
-  
-  .T1{
-      overflow-x: auto;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      min-height: 100vh;
-      color: purple;
-  }
 
   .UIbuttons{
       color: yellow;
       background-color: purple;
       width: 200px;
   }
-
 
   .ShowList{
     bottom: 0;
@@ -198,12 +175,12 @@ table {
     font-size: x-large;
 }
 
-  #searchFirst, #searchLast, #searchPhone, #searchAddress, #searchEmail, #ContactText{
+#searchFirst, #searchLast, #searchPhone, #searchAddress, #searchEmail, #ContactText{
       background-color: yellow;
       color: purple;
       font-size: medium;
       width: 200px;
-  }
+ }
 
   #searchFirst{
       position: fixed;
@@ -260,14 +237,13 @@ table {
 }
 
 .addForm{
-    position: fixed;
+    position: absolute;
     bottom: 30vh;
     right: 20vh;
     z-index: 1;
-    /*background-color: purple;*/
+    /* background-color: purple; */
     width: 30%;
     height: 30%;
-    opacity: .9;
 }
 
 #AddButton{
@@ -282,7 +258,7 @@ table {
     right: 50vh;
 } 
 
-.ModalBody{
+/* .ModalBody{
     background-color: purple;
     color: yellow;
     position: fixed;
@@ -296,4 +272,4 @@ table {
     position: relative;
     right: 0;
     bottom: 0;
-}
+} */

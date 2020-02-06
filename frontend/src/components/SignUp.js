@@ -65,7 +65,7 @@ function SignUp()
 
 	return (
 	<div id="registerDiv">
-		<form >
+		<form class="Signup" >
             <label for="registerName" class="text text-primary">Enter Username: </label>
 	        <input type="text" class="form-control" id="registerName" placeholder="Username" ref={(c) => registerName = c} /><br />
             <label for="registerPassword" class="text text-primary">Enter Password: </label>

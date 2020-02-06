@@ -62,7 +62,7 @@ function Login(props)
 
     return(        
         <div id="loginDiv" class="form-group">
-            <form>
+            <form class="LoginForm">
                 <label for="loginName" class="text text-primary">Enter Username: </label>
                 <input type="text" class="form-control" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
                 <label for="loginPassword" class="text text-primary">Enter Password: </label>

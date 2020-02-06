@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { MDBContainer, MDBInputGroup } from "mdbreact";
 
 class App extends React.Component {
 	constructor(props) {
@@ -13,7 +12,7 @@ class App extends React.Component {
 		};
 
 		this.state2 = "";
-
+		
 		this.handleChange = this.handleChange.bind(this);
 		this.addContact = this.addContact.bind(this);
 	}
@@ -55,18 +54,22 @@ class App extends React.Component {
 			email: ""
 		};
 
-		this.state2 = 'Contact created successfully'
+		this.state2 = 'Contact created successfully';
 
 		return;
 	}
 
 	render() {
 		return (
-			<div className="addForm">
+			<div class="form-group">
+				<form class="addForm">
+
+				<label for="loginName" class="text text-primary">Please enter new contact info</label>
 				<input
 					type="text"
 					name="firstName"
 					placeholder="First Name"
+					class="form-control"
 					onChange={this.handleChange}
 					value={this.state.firstName}
 				/>
@@ -74,6 +77,7 @@ class App extends React.Component {
 					type="text"
 					name="lastName"
 					placeholder="Last Name"
+					class="form-control"
 					onChange={this.handleChange}
 					value={this.state.lastName}
 				/>
@@ -81,6 +85,7 @@ class App extends React.Component {
 					type="text"
 					name="phoneNumber"
 					placeholder="Phone Number"
+					class="form-control"
 					onChange={this.handleChange}
 					value={this.state.phoneNumber}
 				/>
@@ -88,6 +93,7 @@ class App extends React.Component {
 					type="text"
 					name="address"
 					placeholder="Address"
+					class="form-control"
 					onChange={this.handleChange}
 					value={this.state.address}
 				/>
@@ -95,6 +101,7 @@ class App extends React.Component {
 					type="text"
 					name="email"
 					placeholder="Email"
+					class="form-control"
 					onChange={this.handleChange}
 					value={this.state.email}
 				/>
@@ -114,6 +121,8 @@ class App extends React.Component {
 				>
 					Cancel
 				</a>
+
+				</form>
 				<span id="loginResult" class="badLogin1 text text-warning" value={this.state2} />
 			</div>
 		);
