@@ -128,7 +128,7 @@ export class Contact extends Component {
         return (
             <div style = {this.getStyle()}>
                 <p>
-                    <button type="button" style={btnStyle} >x</button>
+                    <button type="button" style={btnStyle} onClick = {() => this.deleteContact(_id)}>x</button>
                     <button style={editBtnStyle} onClick={() => this.show(this.props.contact)}>Edit</button>
                 </p>
                     {firstName} {lastName}
