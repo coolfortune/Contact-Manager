@@ -117,7 +117,8 @@ class App extends React.Component {
 					type="button"
 					id="CancelButton"
 					class="btn btn-outline-primary"
-					href="/contacts/:id"
+					href={window.location.pathname}
+					
 				>
 					Cancel
 				</a>

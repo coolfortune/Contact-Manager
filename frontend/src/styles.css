@@ -67,6 +67,11 @@ h3{
     height: 100vw;
     padding: 0vw 2vw 0vw 0vw;
 }
+
+h4{
+    font-size: larger;
+    white-space: nowrap;
+}
   
 .LoginForm, .Signup{
     position: absolute;
@@ -262,18 +267,3 @@ h3{
     right: 50vh;
 } 
 
-/* .ModalBody{
-    background-color: purple;
-    color: yellow;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-}
-
-.ModalButton{
-    background-color: rgb(36, 2, 49);
-    color: yellow;
-    position: relative;
-    right: 0;
-    bottom: 0;
-} */

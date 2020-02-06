@@ -63,8 +63,8 @@ function Navbar(props)
    const ListStyle = {
 	position: 'fixed',
 	width: '50%',
-	bottom: '0px',
-	right: '0',
+	bottom: '30vh',
+	right: '20vh',
 }
 
 export default Navbar; 
