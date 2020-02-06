@@ -1,5 +1,8 @@
 import React , { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import Contact from './Contact';
 
 class SearchForm extends Component 
 {
@@ -7,7 +10,9 @@ class SearchForm extends Component
         super(props);
         
         this.state = {
-            firstName: ""
+            firstName : "",
+            _id: "",
+            results: []
         }
         
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -16,8 +21,10 @@ class SearchForm extends Component
     
     handleInputChange(event) {
         const value = event.target.value;
+        const _id = event.target._id;
+        
         this.setState({
-            firstName: value
+            firstName: value,
         })
     }
 
@@ -25,21 +32,33 @@ class SearchForm extends Component
         event.preventDefault();
 
         const userID = window.location.pathname;
-        const firstName = JSON.stringify(this.state);
-    
-        fetch('http://localhost:5000/api' + userID, 
-            {method: 'POST', body: firstName, headers:{'Content-Type': 'application/json'}})
-            .then(res => res.json())
-            .catch(err => alert(err.message))
+        const body = {firstName: this.state.firstName}
+        const url = 'http://localhost:5000/api' + userID + '/search';
+
+        if (body.firstName === "")
+            console.log("Contact not found")
+        
+        
+
+        axios.post(url, body)
+        .then(res => this.setState({ results: res.data }))
+
+        console.log(this.state.results)
+
     }
 
     render()
     { 
+        if (this.state.results === [])
+            return;
+
+        const contactArr = this.state.results;
         return (
             <form class="searchForm">
             <input 
                 placeholder="Search for contact.."
                 value={this.state.firstName}
+                id={this.state._id}
                 onChange={this.handleInputChange}
             />
 
@@ -51,9 +70,17 @@ class SearchForm extends Component
 
                 >Search</button>
             </p>
+            {contactArr.map(contact => 
+                <div className="ShowList">
+                <Contact key = {contact.id} contact = {contact} >
+                    </Contact></div>)}
             </form>
         );
     }
+}
+
+Contact.propTypes = {
+    contact: PropTypes.object.isRequired
 }
 ReactDOM.render(<SearchForm />, document.getElementById('root'));
 export default SearchForm;

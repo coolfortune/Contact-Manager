@@ -18,7 +18,10 @@ export class Contact extends Component {
         }
     }
     
+<<<<<<< HEAD
    
+=======
+>>>>>>> 987c654028c3b14e223c71f673269b275e7077ad
     show()
     {
         alert('edit button works')
