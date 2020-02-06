@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/user/flare/Documents/Contact-Manager
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R frontend $DEPLOYPATH
+    - /bin/cp -R backend $DEPLOYPATH
