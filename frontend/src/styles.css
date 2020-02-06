@@ -111,7 +111,7 @@ h3{
     position: fixed;
     right: 0;
     top: 0;
-    width: 70%;
+    width: 100%;
   }
   
   /* Style the links inside the navigation bar */
@@ -233,7 +233,12 @@ h3{
 }
 
 .searchForm{
+    position: absolute;
+    bottom: 30vh;
+    right: 20vh;
     z-index: 1;
+    width: 30%;
+    height: 30%;
 }
 
 .addForm{
@@ -241,7 +246,6 @@ h3{
     bottom: 30vh;
     right: 20vh;
     z-index: 1;
-    /* background-color: purple; */
     width: 30%;
     height: 30%;
 }

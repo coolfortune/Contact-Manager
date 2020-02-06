@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ContactsPage from '../pages/ContactsPage';
 import ContactList from './ContactList';
 import AddForm from './AddForm';
+import SearchForm from './SearchForm';
 
 function Navbar(props)
 {
@@ -24,6 +25,7 @@ function Navbar(props)
     {
         ReactDOM.render(
         <div>
+            <SearchForm />,
             <ContactsPage />, 
 
         </div>,    
@@ -51,7 +53,7 @@ function Navbar(props)
         <div className="navbar">
 
         <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={home} >Home</button>
-        <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={search} >Search/Edit/Delete Contacts</button>
+        <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={search} >Search</button>
         <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={add} >Add New Contact</button>
         <button type="button" id="SearchButton" class="btn btn-outline-primary"  onClick={logOut} >Logout</button>
     </div>

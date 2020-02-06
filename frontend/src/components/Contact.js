@@ -12,13 +12,20 @@ export class Contact extends Component {
         }
     }
 
+    show()
+    {
+        alert('edit button works')
+        
+    }
+         
+
     render() {
         const { firstName, lastName } = this.props.contact;
         return (
             <div style = {this.getSyle()}>
                 <p>
                     <button type="button" style={btnStyle} >x</button>
-                    <button style={editBtnStyle}>Edit</button>
+                    <button style={editBtnStyle} onClick={this.show}>Edit</button>
                 </p>
                     {firstName} {lastName}
                 
