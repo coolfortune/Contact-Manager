@@ -3,8 +3,7 @@ import Contact from "./Contact.js";
 import axios from 'axios'
 import "../styles.css";
 
-import uuid from "uuid";
-import PropTypes from "prop-types";
+
 
 
 export class ContactList extends Component {
@@ -65,14 +64,12 @@ export class ContactList extends Component {
 
             return contactArray.map(contact => (
                 <div className="ShowList">
-        <Contact key={contact.id} contact={contact} />
+        <Contact key={contact._id} contact={contact} />
       </div>
     ));
   }
 }
 
-ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired
-};
+
 
 export default ContactList;
