@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import ReactDOM from 'react-dom'
+import confirmDelete from './confirmDelete'
 
 export class Contact extends Component {
 
@@ -16,42 +18,28 @@ export class Contact extends Component {
         }
     }
     
-    delete (id) {
-        const userId = window.location.pathname;
-        axios.delete('http://localhost:5000/api' + userId,
-            {
-                "_id":id
-            })
-            .then(res =>{
-                if(res.success){
-                    alert("Nice!")
-                }
-                else alert("NOOO")
-
-            })
-    }
-
-
+   
     show()
     {
         alert('edit button works')
     }
 
     deleteContact = (_id) => {
+
+       if(window.confirm("You are about to delete " + this.props.contact.firstName + " " + this.props.contact.lastName + ". Confirm?"))
+        {  
         const body = { _id : _id }
         const userId = window.location.pathname;
         const url = "http://localhost:5000/api" + userId;
         console.log(body)
 
         axios.delete(url, { data: body })
-        .then(res => {
-            if(!res.data.success) {
-                alert('Deletion error!');
-            } else {
-                alert('Deleted Successfully!');
-            }})
+        
         .catch(err => console.log(err))
+       }
     };
+
+
          
 
     render() {
