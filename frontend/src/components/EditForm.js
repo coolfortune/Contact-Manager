@@ -54,7 +54,7 @@ class EditForm extends React.Component {
             email: this.state.email
         }
 
-        axios.get('http://localhost:5000/api' + userId, contact)
+        axios.get('https://mamba-contacts.herokuapp.com/api' + userId, contact)
         .then(res => {
             console.log(res.data)
             console.log('Student succesfully updated')

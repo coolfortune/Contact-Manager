@@ -111,7 +111,7 @@ export class Contact extends Component {
          {  
          const body = { _id : _id }
         const userId = window.location.pathname;
-        const url = "http://localhost:5000/api" + userId;
+        const url = "https://mamba-contacts.herokuapp.com/api" + userId;
         console.log(body)
 
         axios.delete(url, { data: body })

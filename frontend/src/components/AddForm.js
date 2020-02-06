@@ -41,7 +41,7 @@ class App extends React.Component {
 		const payload = JSON.stringify(this.state);
 		const userId = window.location.pathname;
 
-		fetch("http://localhost:5000/api" + userId + "/add", {
+		fetch("https://mamba-contacts.herokuapp.com/api" + userId + "/add", {
 			method: "POST",
 			body: payload,
 			headers: { "Content-Type": "application/json" }

@@ -33,7 +33,7 @@ class SearchForm extends Component
 
         const userID = window.location.pathname;
         const body = {firstName: this.state.firstName}
-        const url = 'http://localhost:5000/api' + userID + '/search';
+        const url = '/api' + userID + '/search';
 
         if (body.firstName === "")
             console.log("Contact not found")

@@ -34,7 +34,7 @@ function SignUp()
 		
 		try 
 		{
-            const fstResponse = await fetch('http://localhost:5000/api/users',
+            const fstResponse = await fetch('https://mamba-contacts.herokuapp.com/api/users',
                 {method:'POST', body:jsUser, headers:{'Content-Type': 'application/json'}});
 
 			var res = await fstResponse.text();
@@ -46,7 +46,7 @@ function SignUp()
 				return;
 			}
 
-            const sndResponse = await fetch('http://localhost:5000/api/users/register',
+            const sndResponse = await fetch('https://mamba-contacts.herokuapp.com/api/users/register',
                 {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
 
 			var result = JSON.parse(await sndResponse.text());

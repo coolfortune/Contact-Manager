@@ -16,7 +16,7 @@ export class ContactList extends Component {
             super(props);
             const userId = window.location.pathname;
 
-            axios.get('http://localhost:5000/api' + userId)
+            axios.get('https://mamba-contacts.herokuapp.com/api' + userId)
             .then(res => this.setState({ contacts: res.data} ))
         
             }

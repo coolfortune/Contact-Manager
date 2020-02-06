@@ -23,7 +23,7 @@ function Login(props)
         // Try login request
         try
         {
-            const response = await fetch('http://localhost:5000/api/users/login',
+            const response = await fetch('https://mamba-contacts.herokuapp.com/api/users/login',
                 {method:'POST', body:js, headers:{'Content-Type': 'application/json'}});
 
             var res = await response.json();
@@ -49,7 +49,7 @@ function Login(props)
         }
         catch(e)
         {
-            alert(e.toString());
+            console.error(e);
             return;
         }
 
