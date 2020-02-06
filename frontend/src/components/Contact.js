@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export class Contact extends Component {
 
 
-    getSyle = () => {
+    getStyle = () => {
         return {
             background : '#f4f4f4',
             padding: '3px',
@@ -15,7 +15,7 @@ export class Contact extends Component {
     render() {
         const { firstName, lastName } = this.props.contact;
         return (
-            <div style = {this.getSyle()}>
+            <div style = {this.getStyle()}>
                 <p>
                     <button type="button" style={btnStyle} >x</button>
                     <button style={editBtnStyle}>Edit</button>
