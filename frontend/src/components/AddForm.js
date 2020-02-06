@@ -54,7 +54,7 @@ class App extends React.Component {
 			email: ""
 		});
 
-		this.setState('Contact created successfully');
+		this.state2 = 'Contact created successfully';
 
 		return;
 	}
