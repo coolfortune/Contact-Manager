@@ -5,18 +5,36 @@ import axios from 'axios'
 export class Contact extends Component {
 
 
+
+    
     getStyle = () => {
         return {
-            background : '#f4f4f4',
+            background : 'rgb(36, 2, 49)',
+            color: 'yellow',
             padding: '3px',
             borderBottom: '1px #ccc dotted'
         }
     }
+    
+    delete (id) {
+        const userId = window.location.pathname;
+        axios.delete('http://localhost:5000/api' + userId,
+            {
+                "_id":id
+            })
+            .then(res =>{
+                if(res.success){
+                    alert("Nice!")
+                }
+                else alert("NOOO")
+
+            })
+    }
+
 
     show()
     {
         alert('edit button works')
-        
     }
 
     deleteContact = (_id) => {
@@ -56,13 +74,15 @@ Contact.propTypes = {
 }
 
 const editBtnStyle = {
-    background: 'grey',
-    color: 'white',
+    background: 'yellow',
+    color: 'rgb(36, 2, 49)',
     borderRadius: '50%',
     border: 'none',
     cursor: 'pointer',
     padding: '3px',
-    float: 'right'
+    float: 'right',
+    right: '20vh',
+    positon: 'relative'
 }
 
 const btnStyle = {
@@ -71,7 +91,7 @@ const btnStyle = {
     border: 'none',
     padding: '3px 11px',
     borderRadius:  '70%',
-    cursor: 'pointer',
+    cursor: 'solid',
     float: 'right'
 }
 
